@@ -3,7 +3,7 @@ import "./UniswapV3.sol";
 
 
 
-contract Coin98ZeroxV2 is UniswapV3{
+contract Coin98UniswapV3 is UniswapV3{
     using SafeMath for uint256;
 
     struct SwapParam {
@@ -17,7 +17,7 @@ contract Coin98ZeroxV2 is UniswapV3{
     }
     constructor(address _weth) WethProvider(_weth) {}
 
-    function swap(uint amount0Out, uint amount1Out, address to, bytes memory data) external payable {
+    function swap(uint amount0Out, uint amount1Out, address payable to, bytes memory data) external payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         require(swapParam.index == 5, "Invalid Route");
         swapOnUniswapV3(
@@ -28,6 +28,6 @@ contract Coin98ZeroxV2 is UniswapV3{
             swapParam.payload
         );
         uint256 balance = swapParam.toToken.balanceOf(address(this));
-        swapParam.toToken.transfer(to, balance);
+        Utils.transferTokens(address(swapParam.toToken), to, balance);
     }
 }

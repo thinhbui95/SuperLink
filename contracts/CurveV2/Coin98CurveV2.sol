@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "./CurveV2.sol";
 
@@ -18,7 +19,7 @@ contract Coin98CurveV2 is CurveV2{
 
     constructor(address _weth) WethProvider(_weth) {}
 
-    function swap(uint amount0Out, uint amount1Out, address to, bytes memory data) external  payable {
+    function swap(uint amount0Out, uint amount1Out, address payable to,  bytes memory data) external payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         require(swapParam.index == 9, "Invalid Route");
         swapOnCurveV2(
@@ -30,9 +31,11 @@ contract Coin98CurveV2 is CurveV2{
         );
 
         uint256 balance = swapParam.toToken.balanceOf(address(this));
-        swapParam.toToken.transfer(to, balance);
+        Utils.transferTokens(address(swapParam.toToken), to, balance);
+
+        }
     }
 
-}
+
 
 

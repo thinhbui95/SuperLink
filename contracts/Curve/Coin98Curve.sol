@@ -13,13 +13,13 @@ contract Coin98Adapter1 is Curve {
         uint256 networkFee;
     }
 
-    function swap(uint amount0Out, uint amount1Out, address to, bytes memory data) external payable {
+    function swap(uint amountIn, address to, bytes memory data) external payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         require(swapParam.index == 3, "Invalid route");
         swapOnCurve(
             swapParam.fromToken,
             swapParam.toToken,
-            amount0Out,
+            amountIn,
             swapParam.targetExchange,
             swapParam.payload
         );

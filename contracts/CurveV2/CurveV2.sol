@@ -4,6 +4,7 @@ import "../library/Utils.sol";
 import "../interface/ICurveV2Pool.sol";
 import "../interface/IWETH.sol";
 
+
 abstract contract CurveV2 is WethProvider {
 
     struct CurveV2Data {
@@ -37,9 +38,9 @@ abstract contract CurveV2 is WethProvider {
             ICurveV2Pool(exchange).exchange(curveV2Data.i, curveV2Data.j, fromAmount, 1);
         }
 
-        if (address(toToken) == Utils.ethAddress()) {
-            uint256 receivedAmount = Utils.tokenBalance(WETH, address(this));
-            IWETH(WETH).withdraw(receivedAmount);
-        }
+        // if (address(toToken) == Utils.ethAddress()) {
+        //     uint256 receivedAmount = Utils.tokenBalance(WETH, address(this));
+        //     IWETH(WETH).withdraw(receivedAmount);
+        // }
     }
 }

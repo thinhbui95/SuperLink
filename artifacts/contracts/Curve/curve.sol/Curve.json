@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Curve",
+  "sourceName": "contracts/Curve/curve.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220ec3e7c4067908a136aee5cbc2c13b8d778c1ab0ac31d1fc227398008c816807364736f6c63430008040033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220ec3e7c4067908a136aee5cbc2c13b8d778c1ab0ac31d1fc227398008c816807364736f6c63430008040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

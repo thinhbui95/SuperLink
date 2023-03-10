@@ -1,7 +1,10 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+import "../Helper.sol";
+
 
 
 
@@ -136,9 +139,9 @@ library Utils {
                 (bool result, ) = destination.call{value: amount, gas: 10000}("");
                 require(result, "Failed to transfer Ether");
             }
-            else {
-                IERC20(token).safeTransfer(destination, amount);
-            }
+          
+                TransferHelper.transferERC20(token, amount, destination);
+            
         }
 
     }
@@ -158,16 +161,16 @@ library Utils {
         }
     }
 
-    function permit(
-        address token,
-        bytes memory permit
-    )
-        internal
-    {
-        if (permit.length == 32 * 7) {
-            (bool success,) = token.call(abi.encodePacked(IERC20Permit.permit.selector, permit));
-            require(success, "Permit failed");
-        }
-    }
+    // function permit(
+    //     address token,
+    //     bytes memory permit
+    // )
+    //     internal
+    // {
+    //     if (permit.length == 32 * 7) {
+    //         (bool success,) = token.call(abi.encodePacked(IERC20Permit.permit.selector, permit));
+    //         require(success, "Permit failed");
+    //     }
+    // }
 
 }
