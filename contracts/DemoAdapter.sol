@@ -175,12 +175,14 @@ contract DemoAdapter is Ownable {
 
     function swapRoutes(
         //address partner,
-        uint256 fromAmout,
+        uint256 fromAmount,
         address fromToken,
         address toToken,
         SwapChain memory swapChain
     ) external payable {
-        require (msg.value >= fromAmout,"Not enough efficient");
+        if (fromToken == address(0)) {
+            require (msg.value >= fromAmount,"Not enough efficient"); 
+        }
         //require(Partners[partner].isActive, "SuperLink: Partner not active");
         uint256 routesSize = swapChain.routes.length;
         // address _toToken = toToken == address(0) ? address(0) : toToken;
@@ -191,7 +193,7 @@ contract DemoAdapter is Ownable {
             bytes memory data = swapChain.data[i];
             address to = i == (routesSize - 1) ? address(this) : swapChain.routes[i+1];
             if (i==0) {
-                TransferHelper.onTransferFrom(fromToken,fromAmout,swapChain.routes[i]);
+                TransferHelper.onTransferFrom(fromToken,fromAmount,swapChain.routes[i]);
                 
             }  
             if (i > 0) {
