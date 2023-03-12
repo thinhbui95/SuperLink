@@ -16,7 +16,14 @@ interface SwapAdapter {
     function swap(uint amount0Out, uint amount1Out, address to,  bytes memory data) external payable;
 }
 
-contract DemoAdapter is Ownable {
+abstract contract EthReceiver {
+    receive() external payable {
+        // solhint-disable-next-line avoid-tx-origin
+        require(msg.sender != tx.origin, "ETH deposit rejected");
+    }
+}
+
+contract DemoAdapter is Ownable,  EthReceiver{
     using SafeMath for uint256;
      /// @notice Partner fee local pay for each swap (Use for C98 Finance only)
     uint256 public PARTNER_FEE = 80;
@@ -28,21 +35,7 @@ contract DemoAdapter is Ownable {
         weth = _weth;
     }
 
-
-
-
-    struct SwapParam {
-        uint8 index;
-        IERC20 fromToken;
-        IERC20 toToken;
-        address targetExchange;
-        uint percent;
-        bytes payload;
-        uint256 networkFee;
-    }
-
-
-    
+  
     /// @notice Claim Partner Fee event for notice to the partner when user swap and using partner UI
     event ClaimPartnerFee(
         address partner,
