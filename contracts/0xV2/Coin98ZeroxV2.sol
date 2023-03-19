@@ -19,7 +19,7 @@ contract Coin98ZeroxV2 is ZeroxV2{
     WethProvider(_weth)
     ZeroxV2(_erc20Proxy)  {}
 
-    function swap(uint amount0Out, address to, bytes memory data) external payable {
+    function swap(uint amount0Out, uint amount1Out,address payable to, bytes memory data) external payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         require(swapParam.index == 2, "Invalid Route");
         swapOnZeroXv2(
@@ -30,6 +30,6 @@ contract Coin98ZeroxV2 is ZeroxV2{
             swapParam.payload
         );
         uint256 balance = swapParam.toToken.balanceOf(address(this));
-        swapParam.toToken.transfer(to, balance);
+        Utils.transferTokens(address(swapParam.toToken), to, balance);
     }
 }

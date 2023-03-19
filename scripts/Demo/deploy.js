@@ -9,8 +9,8 @@ async function main() {
 
     await demoAdapter.deployed();
 
-    console.log("DemoAdapter deployed to:", DemoAdapter.address);
-    console.log("DemoAdapter proxy deployed to:", DemoAdapter.address);
+    console.log("DemoAdapter deployed to:", demoAdapter.address);
+    //console.log("DemoAdapter proxy deployed to:", demoAdapter.address);
 
     // try {
     //     const contractAddress = await getImplementationAddress(

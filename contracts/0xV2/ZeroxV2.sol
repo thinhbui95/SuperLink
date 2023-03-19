@@ -30,7 +30,7 @@ abstract contract ZeroxV2 is WethProvider {
         internal
 
     {
-        address _fromToken = address(fromToken);
+        //address _fromToken = address(fromToken);
 
         _swapOn0xV2(
             fromToken,
@@ -42,25 +42,25 @@ abstract contract ZeroxV2 is WethProvider {
 
     }
 
-    function buyOnZeroXv2(
-        IERC20 fromToken,
-        IERC20 toToken,
-        uint256 fromAmount,
-        address exchange,
-        bytes memory payload
-    )
-        internal
+    // function buyOnZeroXv2(
+    //     IERC20 fromToken,
+    //     IERC20 toToken,
+    //     uint256 fromAmount,
+    //     address exchange,
+    //     bytes memory payload
+    // )
+    //     internal
 
-    {
-        address _fromToken = address(fromToken);
-        _swapOn0xV2(
-            fromToken,
-            toToken,
-            fromAmount,
-            exchange,
-            payload
-        );
-    }
+    // {
+    //     address _fromToken = address(fromToken);
+    //     _swapOn0xV2(
+    //         fromToken,
+    //         toToken,
+    //         fromAmount,
+    //         exchange,
+    //         payload
+    //     );
+    // }
 
     function _swapOn0xV2(
         IERC20 fromToken,
@@ -76,13 +76,13 @@ abstract contract ZeroxV2 is WethProvider {
         address _toToken = address(toToken);
         require(_fromToken != _toToken, "fromToken should be different from toToken");
 
-        if (_fromToken == Utils.ethAddress()) {
-            _fromToken = WETH;
-        }
+        // if (_fromToken == Utils.ethAddress()) {
+        //     _fromToken = WETH;
+        // }
 
-        else if (_toToken == Utils.ethAddress()) {
-            _toToken = WETH;
-        }
+        // else if (_toToken == Utils.ethAddress()) {
+        //     _toToken = WETH;
+        // }
 
         ZeroxV2Data memory data = abi.decode(payload, (ZeroxV2Data));
 

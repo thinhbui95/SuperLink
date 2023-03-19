@@ -45,7 +45,7 @@ contract Coin98Uniswap {
     }
 
 
-    function swapUniV2(uint256 amount0Out, uint256 amount1Out, address to, bytes memory data) external payable{
+    function swap(uint256 amount0Out, uint256 amount1Out, address to, bytes memory data) external payable{
 
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         require(swapParam.index == 10, "Invalid Route");

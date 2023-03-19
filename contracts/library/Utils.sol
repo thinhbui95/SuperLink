@@ -138,10 +138,11 @@ library Utils {
             if (token == ETH_ADDRESS) {
                 (bool result, ) = destination.call{value: amount, gas: 10000}("");
                 require(result, "Failed to transfer Ether");
-            }
+            } else {
           
                 TransferHelper.transferERC20(token, amount, destination);
             
+            }
         }
 
     }
