@@ -1,7 +1,7 @@
 # SuperLink
 BSC Testnet
 
-DemoAdapter  : 0x3aBB59464Ec3E291EA67Bf1d7fb4c6f09f5F251B
+DemoAdapter(Full)  : 0x3aBB59464Ec3E291EA67Bf1d7fb4c6f09f5F251B
 
 Executor : 0x45b582b0e3F2c5f698d8Ef09288051b64C71A748
 
