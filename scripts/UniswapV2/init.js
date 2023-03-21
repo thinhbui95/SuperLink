@@ -8,7 +8,7 @@ async function main() {
 
     const Swap = await hre.ethers.getContractFactory("Coin98UniswapV2");
     // const swapuni = await Swap.attach("0xd58B8c478aCaFe6059d1d927f87526ED8535e798");//Goerli
-    const swapuni = await Swap.attach("0xe4D2394AEf495B1A3aeda413FBADda84f59F1698"); //BSC testnet
+    const swapuni = await Swap.attach("0xD448BbE015Cd829e2Ad0E7b31f84f55C359aECbf"); //BSC testnet
     const swapparam = Web3EthAbi.encodeParameter({
         SwapParam:{
             //index:"uint256",

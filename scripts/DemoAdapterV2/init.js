@@ -7,7 +7,7 @@ const Web3EthAbi = require('web3-eth-abi');
 async function main() {
 
     const DemoAdapter = await hre.ethers.getContractFactory("DemoAdapter1");
-    const demoAdapter = await DemoAdapter.attach("0x3aBB59464Ec3E291EA67Bf1d7fb4c6f09f5F251B");//BSC Testnet
+    const demoAdapter = await DemoAdapter.attach("0x323b217E49a9D8F7E36E1522853c5e8F519A1653");//BSC Testnet
     
     var swapparam1 = Web3EthAbi.encodeParameter({
         SwapParam:{
@@ -22,28 +22,28 @@ async function main() {
     {
         //index:1,
         fromToken:"0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498", //A
-        toToken: "0xCA8eB2dec4Fe3a5abbFDc017dE48E461A936623D", //USDC
+        toToken: "0xCA8eB2dec4Fe3a5abbFDc017dE48E461A936623D", //USDC 
         targetExchange: "0x41E0f861EF8eCdb4d45aCf69e0f9B8ec8600c2e4", //Pair A/USDC
         payload: "0x",
         //networkFee: 11,
     });
    // console.log(swapparam1);
    var amountIn  = Web3.utils.toWei('100', 'ether');
-   var amountOut  = Web3.utils.toWei('25', 'ether');
+   var amountOut  = Web3.utils.toWei('30', 'ether');
 
    const encodeAmountIn1 = Web3EthAbi.encodeParameters(
         ['uint256[]'],[[amountIn,amountIn]]
     );
     const encodeAmountOut1 = Web3EthAbi.encodeParameters(
-        ['uint256[]'],[[amountOut,amountOut]]
+        ['uint256[]'],[[amountOut,amountIn]]
     );
     const encodeRouters1 = Web3EthAbi.encodeParameters(
-        ['address[]'],[["0xe4D2394AEf495B1A3aeda413FBADda84f59F1698","0xe4D2394AEf495B1A3aeda413FBADda84f59F1698"]]
+        ['address[]'],[["0xD448BbE015Cd829e2Ad0E7b31f84f55C359aECbf","0xD448BbE015Cd829e2Ad0E7b31f84f55C359aECbf"]]
     );
     const encodePayload1 = Web3EthAbi.encodeParameters(
         ['bytes[]'],[[swapparam1,swapparam1]]
     );
-    var fromToken1 = "0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498"; //A
+    var fromToken1 = "0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498" //A
     const element1 = Web3EthAbi.encodeParameter({
         ElementSwap:{
             encodeRouters :"bytes",
@@ -92,21 +92,21 @@ async function main() {
         payload: payload2,
         //networkFee: 11,
     });
-    var amountIn  = Web3.utils.toWei('50', 'ether');
+    var amountIn  = Web3.utils.toWei('20', 'ether');
     var amountOut  = Web3.utils.toWei('0', 'ether');
     const encodeAmountIn2 = Web3EthAbi.encodeParameters(
-        ['uint256[]'],[[amountIn]]
+        ['uint256[]'],[[amountIn,amountIn,amountIn]]
     );
     const encodeAmountOut2 = Web3EthAbi.encodeParameters(
-        ['uint256[]'],[[amountOut]]
+        ['uint256[]'],[[amountOut,amountOut,amountOut]]
     );
     const encodeRouters2 = Web3EthAbi.encodeParameters(
-        ['address[]'],[["0x14019b6fec14cf6777954078917f8a239Aa1BE93"]]
+        ['address[]'],[["0x2DD4Aa80b9197FdfFF4F15b6a1a35633437cd398","0x2DD4Aa80b9197FdfFF4F15b6a1a35633437cd398","0x2DD4Aa80b9197FdfFF4F15b6a1a35633437cd398"]]
     );
     const encodePayload2 = Web3EthAbi.encodeParameters(
-        ['bytes[]'],[[swapparam2]]
+        ['bytes[]'],[[swapparam2,swapparam2,swapparam2]]
     );
-    var fromToken2 = "0xCA8eB2dec4Fe3a5abbFDc017dE48E461A936623D"; //USDC
+    var fromToken2 = "0xCA8eB2dec4Fe3a5abbFDc017dE48E461A936623D" //USDC 
     const element2 = Web3EthAbi.encodeParameter({
         ElementSwap:{
             encodeRouters :"bytes",
@@ -135,11 +135,16 @@ async function main() {
     //const dataChain1 = Web3EthAbi.decodeParameters(['bytes[]'],total)[0];
 
     var fromAmount  = Web3.utils.toWei('200', 'ether');  
+    // var fromToken = "0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498"; //A
     var fromToken = "0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498"; //A
-    var toToken = "0x3304dd20f6Fe094Cb0134a6c8ae07EcE26c7b6A7"; //BUSD
+    var toToken =  "0x3304dd20f6Fe094Cb0134a6c8ae07EcE26c7b6A7" //BUSD
     var data = total;
-    var executor = "0x45b582b0e3F2c5f698d8Ef09288051b64C71A748";
+    var executor = "0x636129Ea7cB545f76686455D1e67C07e27Fe0b1D";
+    var payloads = [swapparam1,swapparam2];
+    var routers = ["0xD448BbE015Cd829e2Ad0E7b31f84f55C359aECbf","0x2DD4Aa80b9197FdfFF4F15b6a1a35633437cd398"];
+    var amountOut = [Web3.utils.toWei('50', 'ether'),0]
     await demoAdapter.swapRoutes(fromAmount, fromToken, toToken, data, executor);
+    // await demoAdapter.swapStraight(fromAmount,fromToken,toToken,routers,payloads,amountOut);
 
 
     

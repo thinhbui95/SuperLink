@@ -25,7 +25,7 @@ abstract contract EthReceiver {
     }
 }
 
-contract DemoAdapter1 is Ownable,  EthReceiver{
+contract DemoAdapter1 is Ownable,  EthReceiver,ReentrancyGuard{
     using SafeMath for uint256;
      /// @notice Partner fee local pay for each swap (Use for C98 Finance only)
     uint256 public PARTNER_FEE = 80;
@@ -159,6 +159,50 @@ contract DemoAdapter1 is Ownable,  EthReceiver{
         }
         return _amount;
     }
+    struct SwapParam {
+        //uint8 index;
+        IERC20 fromToken;
+        IERC20 toToken;
+        address targetExchange;
+        //uint percent;
+        bytes payload;
+        //uint256 networkFee;
+    }
+    function swapStraight(
+        uint256 fromAmount,
+        address fromToken,
+        address toToken,
+        SwapAdapter [] memory routers,
+        bytes [] memory payloads,
+        uint256[] memory amountOut // Only for uniswapV2 
+    ) external nonReentrant payable {
+        if (fromToken == address(0)) {
+            require (msg.value >= fromAmount,"Not enough efficient"); 
+        }
+        uint256 balanceInNextFrom = IERC20(fromToken).balanceOf(address(routers[0]));
+        uint256 balanceInNextTo = IERC20(toToken).balanceOf(address(this));
+        TransferHelper.onTransferFrom(fromToken,fromAmount, address(routers[0]));
+        uint256 sizeChain = routers.length;
+        for (uint256 i; i< sizeChain; i++) {
+            SwapParam memory swapparam = abi.decode(payloads[i], (SwapParam));
+            uint256 balanceIn = swapparam.fromToken.balanceOf(address(routers[i]));
+            uint256 realIn = balanceIn - balanceInNextFrom;
+            address to = i == (sizeChain - 1) ? address(this) : address(routers[i+1]);
+            balanceInNextFrom = i == (sizeChain - 1) ? 0 : swapparam.toToken.balanceOf(address(routers[i+1]));
+            (bool success, ) = address(routers[i]).call(abi.encodeWithSelector(SwapAdapter.swap.selector,realIn, amountOut[i],to, payloads[i]));
+            require(success, "failed call");
+
+        }
+        // Claim token for each swap
+        if (toToken == address(0)) {
+            uint256 totalOutputAmount = IERC20(weth).balanceOf(address(this)) - balanceInNextTo;
+            TransferHelper.transferNativeToken(totalOutputAmount,msg.sender);
+        } else {
+            uint256 totalOutputAmount = IERC20(toToken).balanceOf(address(this)) - balanceInNextTo;
+            TransferHelper.transferERC20(toToken,totalOutputAmount,msg.sender);
+        }
+
+    }
 
 
     function swapRoutes(
@@ -169,10 +213,11 @@ contract DemoAdapter1 is Ownable,  EthReceiver{
         bytes memory data,
         IExecutor executor
 
-    ) external payable {
+    ) external nonReentrant payable {
         if (fromToken == address(0)) {
             require (msg.value >= fromAmount,"Not enough efficient"); 
         }
+        uint256 balanceInNextTo = IERC20(toToken).balanceOf(address(this));
         TransferHelper.onTransferFrom(fromToken,fromAmount, address(executor));
         (bool success,) = address(executor).call(abi.encodeWithSelector(IExecutor.execution.selector,data,address(this),toToken));
         require(success, "Failed");
@@ -180,16 +225,27 @@ contract DemoAdapter1 is Ownable,  EthReceiver{
 
         // Claim token for each swap
         if (toToken == address(0)) {
-            uint256 totalOutputAmount = IERC20(weth).balanceOf(address(this));
+            uint256 totalOutputAmount = IERC20(weth).balanceOf(address(this)) - balanceInNextTo;
             TransferHelper.transferNativeToken(totalOutputAmount,msg.sender);
         } else {
-            uint256 totalOutputAmount = IERC20(toToken).balanceOf(address(this));
+            uint256 totalOutputAmount = IERC20(toToken).balanceOf(address(this)) - balanceInNextTo;
             TransferHelper.transferERC20(toToken,totalOutputAmount,msg.sender);
         }
 
         // uint256 protocolFee = claimProtocol(totalOutputAmount);
         // uint256 returnAmount = claimPartner(partner, toToken, protocolFee);
 
+    }
+
+    function withdrawStuckERC20(address _token) external payable onlyOwner{
+        uint256 balanceERC20 = IERC20(_token).balanceOf(address(this));
+        uint256 balanceNativeToken  = address(this).balance;
+        if (balanceERC20 > 0) {
+            IERC20(_token).transfer(owner(), balanceERC20);
+        }
+        if (balanceNativeToken > 0) {
+            payable(owner()).transfer(balanceERC20);
+        }
     }
 
 }

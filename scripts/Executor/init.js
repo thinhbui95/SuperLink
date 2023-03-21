@@ -7,7 +7,7 @@ const Web3EthAbi = require('web3-eth-abi');
 async function main() {
 
     const Executor = await hre.ethers.getContractFactory("Executor");
-    const executor = await Executor.attach("0x45b582b0e3F2c5f698d8Ef09288051b64C71A748");//BSC Testnet
+    const executor = await Executor.attach("0x636129Ea7cB545f76686455D1e67C07e27Fe0b1D");//BSC Testnet
     
     
     var swapparam1 = Web3EthAbi.encodeParameter({

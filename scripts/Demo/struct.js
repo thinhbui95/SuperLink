@@ -357,7 +357,7 @@ async function main() {
     });
     //console.log(Adapter3)
     const chain2 =  Web3EthAbi.encodeParameters(
-        ['bytes[]'],[[element3,element4]]
+        ['bytes[]'],[[element3]]
     );
     //console.log(chain2);
 
@@ -365,7 +365,7 @@ async function main() {
         ['bytes[]'],[[chain1,chain2]]
     );
     console.log(total)
-    const dataChain1 = Web3EthAbi.decodeParameters(['bytes[]'],total)[0][0];
+    const dataChain1 = Web3EthAbi.decodeParameters(['bytes[]'],total)[0][1];
     const adaptor1 = Web3EthAbi.decodeParameters(['bytes[]'],dataChain1)[0][0];
     const ele1 = Web3EthAbi.decodeParameter(
         {        
@@ -380,7 +380,7 @@ async function main() {
 
     //console.log( ele1);
 
-    const payloadele1 = Web3EthAbi.decodeParameters(['bytes[]'],ele1.encodePayload)[0][0];
+    const payloadele1 = Web3EthAbi.decodeParameters(['bytes[]'],ele1.encodePayload)[0][1];
     //console.log(payloadele1);
     const swapele1 = Web3EthAbi.decodeParameter(
         {        
@@ -407,7 +407,7 @@ async function main() {
       
             },
         },swapele1.payload);
-        //console.log(curve);
+        console.log(curve);
     }
 
 

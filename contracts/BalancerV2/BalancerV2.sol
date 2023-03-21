@@ -19,7 +19,7 @@ abstract contract BalancerV2  {
         IERC20 fromToken,
         IERC20 toToken,
         uint256 fromAmount,
-        address exchangeProxy,
+        address exchangeProxy, //Address Vaut
         bytes memory payload
     )
         internal
