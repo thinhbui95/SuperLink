@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "./CurveV2.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+//import "@openzeppelin/contracts/access/Ownable.sol";
+//import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 
 
-contract Coin98CurveV2 is CurveV2, Ownable,ReentrancyGuard{
+abstract contract Coin98CurveV2 is CurveV2{
     using SafeMath for uint256;
 
-    struct SwapParam {
+    struct SwapParamCurveV2 {
         //uint8 index;
         IERC20 fromToken;
         IERC20 toToken;
@@ -19,12 +19,11 @@ contract Coin98CurveV2 is CurveV2, Ownable,ReentrancyGuard{
         //uint256 networkFee;
     }
 
-    constructor(address _weth) WethProvider(_weth) {}
 
-    function swap(uint amount0Out, uint amount1Out, address payable to,  bytes memory data) external nonReentrant payable {
-        SwapParam memory swapParam = abi.decode(data, (SwapParam));
+    function swapCurveV2(uint amount0Out, uint amount1Out,  bytes memory data) external  {
+        SwapParamCurveV2 memory swapParam = abi.decode(data, (SwapParamCurveV2));
         //require(swapParam.index == 9, "Invalid Route");
-        uint256 preBalance = swapParam.toToken.balanceOf(address(this));
+        //uint256 preBalance = swapParam.toToken.balanceOf(address(this));
         swapOnCurveV2(
                 swapParam.fromToken,
                 swapParam.toToken,
@@ -33,22 +32,22 @@ contract Coin98CurveV2 is CurveV2, Ownable,ReentrancyGuard{
                 swapParam.payload
         );
 
-        uint256 balance = swapParam.toToken.balanceOf(address(this));
-        Utils.transferTokens(address(swapParam.toToken), to, balance - preBalance);
+        //uint256 balance = swapParam.toToken.balanceOf(address(this));
+        //Utils.transferTokens(address(swapParam.toToken), to, balance - preBalance);
 
         }
 
-    function withdrawStuckERC20(address _token) external payable onlyOwner{
-        uint256 balanceERC20 = IERC20(_token).balanceOf(address(this));
-        uint256 balanceNativeToken  = address(this).balance;
-        if (balanceERC20 > 0) {
-            IERC20(_token).transfer(owner(), balanceERC20);
-        }
-        if (balanceNativeToken > 0) {
-            payable(owner()).transfer(balanceERC20);
-        }
-    }
-    }
+    // function withdrawStuckERC20(address _token) external payable onlyOwner{
+    //     uint256 balanceERC20 = IERC20(_token).balanceOf(address(this));
+    //     uint256 balanceNativeToken  = address(this).balance;
+    //     if (balanceERC20 > 0) {
+    //         IERC20(_token).transfer(owner(), balanceERC20);
+    //     }
+    //     if (balanceNativeToken > 0) {
+    //         payable(owner()).transfer(balanceERC20);
+    //     }
+    // }
+}
 
 
 

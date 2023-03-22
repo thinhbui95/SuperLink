@@ -1,11 +1,10 @@
 pragma solidity ^0.8.0;
-import "../utils/WethProvider.sol";
 import "../library/Utils.sol";
 import "../interface/ICurveV2Pool.sol";
 import "../interface/IWETH.sol";
 
 
-abstract contract CurveV2 is WethProvider {
+abstract contract CurveV2 {
 
     struct CurveV2Data {
         uint256 i;

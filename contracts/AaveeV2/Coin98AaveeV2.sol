@@ -3,7 +3,7 @@ import "./AaveeV2.sol";
 
 
 
-contract Coin98AaveeV2 is Aavee2{
+ contract Coin98AaveeV2 is Aavee2{
     using SafeMath for uint256;
 
     struct SwapParam {

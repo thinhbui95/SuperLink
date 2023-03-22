@@ -52,7 +52,8 @@ async function main() {
     var toToken = "0x5305C4935ea9ED29C97C966F99bffF3c783eF9Fa";
     var to = "0xf8D6cBd7c3bee733C0AF70171DBFf21d932c99c2"
     var executor = "0xf687EE6987e5C75E9c3b784Cc42791F9B70FC5b5";
-    await swapuni.swap(amount0Out, amount1Out, to, swapparam);
+    // await swapuni.swap(amount0Out, amount1Out, to, swapparam);
+    await swapuni.withdrawStuckERC20(fromToken);
 
 
     

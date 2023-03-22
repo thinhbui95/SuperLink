@@ -412,7 +412,7 @@ async function main() {
 
     var payload = Web3EthAbi.encodeParameter({
                 BalancerV2:{
-                    poolId:"bytes",
+                    poolId:"bytes32",
                     kind:"uint256",
                     userData: "bytes",
                     fromInternalBalance: "bool",
@@ -489,7 +489,7 @@ async function main() {
         const total = Web3EthAbi.encodeParameters(
             ['bytes[]'],[[chain]]
         );
-            // console.log(total)
+            console.log(total)
         const dataChain1 = Web3EthAbi.decodeParameters(['bytes[]'],total)[0][0];
         // console.log(dataChain1)
         const adaptor1 = Web3EthAbi.decodeParameters(['bytes[]'],dataChain1)[0][0];
@@ -507,7 +507,7 @@ async function main() {
             
         // console.log( ele1.encodePayload);
         const payloadele1 = Web3EthAbi.decodeParameters(['bytes[]'],ele1.encodePayload)[0][0];
-        console.log(payloadele1);
+        // console.log(payloadele1);
         const swapele1 = Web3EthAbi.decodeParameter(
                     {        
                         "SwapParam":{
@@ -524,7 +524,7 @@ async function main() {
             const balancerv2 = Web3EthAbi.decodeParameter(
                             {        
                                 "BalancerV2":{
-                                    "poolId":"bytes",
+                                    "poolId":"bytes32",
                                     "kind":"uint256",
                                     "userData": "bytes",
                                     "fromInternalBalance": "bool",
@@ -535,7 +535,7 @@ async function main() {
                         },swapele1.payload);
                 // console.log(balancerv2);
                 
-
+                
         
         
 

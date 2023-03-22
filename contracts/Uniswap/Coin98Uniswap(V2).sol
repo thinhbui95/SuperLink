@@ -1,19 +1,19 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+//import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+//import "@openzeppelin/contracts/access/Ownable.sol";
 import "../Helper.sol";
 interface pairSwap{
     function token0() external returns(address);
 }
 
 
-contract Coin98UniswapV2 is Ownable,ReentrancyGuard{
+abstract contract Coin98UniswapV2 {
     uint256 private constant _UNISWAP_PAIR_SWAP_CALL_SELECTOR_32 =
         0x022c0d9f00000000000000000000000000000000000000000000000000000000;
 
-    struct SwapParam {
+    struct SwapParamUniV2 {
         //uint8 index;
         IERC20 fromToken;
         IERC20 toToken;
@@ -61,27 +61,27 @@ contract Coin98UniswapV2 is Ownable,ReentrancyGuard{
     }
 
 
-    function swap(uint256 amount0Out, uint256 amount1Out, address to, bytes memory data) external nonReentrant{
+    function swapUniV2(uint256 amount0Out, uint256 amount1Out, bytes memory data) external{
 
-        SwapParam memory swapParam = abi.decode(data, (SwapParam));
+        SwapParamUniV2 memory swapParam = abi.decode(data, (SwapParamUniV2));
         //require(swapParam.index == 10, "Invalid Route");
         TransferHelper.transferERC20(address(swapParam.fromToken),amount0Out,swapParam.targetExchange);
         // TransferHelper.transferERC20(address(swapParam.fromToken), IERC20(swapParam.fromToken).balanceOf(address(this)),swapParam.targetExchange);
         if (pairSwap(swapParam.targetExchange).token0() != address(swapParam.fromToken)) {
-            poolSwap(amount1Out, swapParam.targetExchange,false, to);
+            poolSwap(amount1Out, swapParam.targetExchange,false, address(this));
         } else {
-            poolSwap(amount1Out, swapParam.targetExchange,true, to);
+            poolSwap(amount1Out, swapParam.targetExchange,true, address(this));
         }
     }
 
-    function withdrawStuckERC20(address _token) external payable onlyOwner{
-        uint256 balanceERC20 = IERC20(_token).balanceOf(address(this));
-        uint256 balanceNativeToken  = address(this).balance;
-        if (balanceERC20 > 0) {
-            IERC20(_token).transfer(owner(), balanceERC20);
-        }
-        if (balanceNativeToken > 0) {
-            payable(owner()).transfer(balanceERC20);
-        }
-    }
+    // function withdrawStuckERC20(address _token) external payable onlyOwner{
+    //     uint256 balanceERC20 = IERC20(_token).balanceOf(address(this));
+    //     uint256 balanceNativeToken  = address(this).balance;
+    //     if (balanceERC20 > 0) {
+    //         IERC20(_token).transfer(owner(), balanceERC20);
+    //     }
+    //     if (balanceNativeToken > 0) {
+    //         payable(owner()).transfer(balanceERC20);
+    //     }
+    // }
 }

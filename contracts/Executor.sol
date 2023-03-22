@@ -4,22 +4,36 @@ import "./Helper.sol";
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "./CurveV2/Coin98CurveV2.sol";
+import "./Uniswap/Coin98Uniswap(V2).sol";
 
-interface SwapAdaptor {
-    function swap(uint256 amount0Out, uint256 amount1Out, address to, bytes memory data) external ;
-}
-contract Executor is Ownable, ReentrancyGuard{
-    function getCall(uint256 amount0Out, uint256 amount1Out, address to, bytes memory data) internal pure returns(bytes memory){
-        return abi.encodeWithSelector(SwapAdaptor.swap.selector,amount0Out,amount1Out, to, data);
+
+// interface SwapAdaptor {
+//     function swap(uint256 amount0Out, uint256 amount1Out, address to, bytes memory data) external ;
+// }
+contract Executor is Ownable, ReentrancyGuard, Coin98UniswapV2,Coin98CurveV2{
+    function getCall(bytes4 adapter,uint256 amount0Out, uint256 amount1Out, bytes memory data) internal pure returns(bytes memory){
+        return abi.encodeWithSelector(adapter,amount0Out,amount1Out, data);
     }
     struct ElementSwap {
-        bytes encodeRouters;
+        bytes encodeAdapter;
         bytes encodeAmountIn;
         bytes encodeAmountOut;
-        address fromToken;
+        //address fromToken;
         bytes encodePayload;
 
     }
+    mapping(uint256 => bytes4) Adapter;
+    constructor() 
+    {
+        Adapter[0] = Coin98CurveV2.swapCurveV2.selector;
+        Adapter[1] = Coin98UniswapV2.swapUniV2.selector;
+
+    }
+
+    
+    //Adapter[0] = Coin98CurveV2.swap.selector;
+
 
 
     function chainRouter(bytes[] memory data) internal  {
@@ -31,14 +45,14 @@ contract Executor is Ownable, ReentrancyGuard{
                 ElementSwap memory element = abi.decode(elements[j], (ElementSwap));
                 uint256[] memory amountIn = abi.decode(element.encodeAmountIn, (uint256[]));
                 uint256[] memory amountOut = abi.decode(element.encodeAmountOut, (uint256[]));
-                address[] memory routers = abi.decode(element.encodeRouters, (address[]));
+                uint256[] memory indexs = abi.decode(element.encodeAdapter, (uint256[]));
                 bytes[] memory payloads = abi.decode(element.encodePayload, (bytes[]));
-                address fromToken = element.fromToken;
+                //address fromToken = element.fromToken;
                 uint256 sizeElementSwap = amountIn.length;
                 for (uint256 k ; k<sizeElementSwap; k++){
-                    TransferHelper.transferERC20(fromToken,amountIn[k],routers[k]);
-                    bytes memory getcall = getCall(amountIn[k], amountOut[k],address(this),payloads[k]);
-                    (bool success, ) = routers[k].call(getcall);
+                    //TransferHelper.transferERC20(fromToken,amountIn[k],routers[k]);
+                    bytes memory getcall = getCall(Adapter[indexs[k]],amountIn[k], amountOut[k],payloads[k]);
+                    (bool success, ) = address(this).call(getcall);
                     require(success,"Failed Call");
                 }
             }

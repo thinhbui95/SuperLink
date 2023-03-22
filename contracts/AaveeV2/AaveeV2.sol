@@ -4,7 +4,7 @@ import "../interface/IWETHGateway.sol";
 import "../interface/IAaveLendingPool.sol";
 
 
-contract Aavee2 {
+abstract contract Aavee2 {
 
   struct AaveeData {
     address aToken;
@@ -19,7 +19,6 @@ contract Aavee2 {
     address _lendingPool,
     address _wethGateway
   )
-    public
   {
     refCode = _refCode;
     lendingPool = _lendingPool;

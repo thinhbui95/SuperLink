@@ -132,7 +132,7 @@ async function main() {
     const total = Web3EthAbi.encodeParameters(
         ['bytes[]'],[[chain1,chain1]]
     );
-    console.log(total)
+    // console.log(total)
     //const dataChain1 = Web3EthAbi.decodeParameters(['bytes[]'],total)[0];
 
 
@@ -140,7 +140,8 @@ async function main() {
     var toToken = "0x3304dd20f6Fe094Cb0134a6c8ae07EcE26c7b6A7";
     var data = total;
     // //var executor = "0x2926EdAb17996aFD7ce4877Db9EE24127174bdae";
-    await executor.execution(total,from,toToken);
+    // await executor.execution(total,from,toToken);
+    await executor.withdrawStuckERC20(toToken);
 
 
     

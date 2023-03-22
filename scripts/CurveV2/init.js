@@ -83,7 +83,8 @@ async function main() {
 
     var amount = Web3.utils.toWei('50', 'ether'); 
     var to = "0x197eE7A0515158225B3A19d9552b894Ff6a55E9b";
-    await Swapstable.swap(amount,0,to, swapparam1);
+    // await Swapstable.swap(amount,0,to, swapparam1);
+    await Swapstable.withdrawStuckERC20("0x3304dd20f6Fe094Cb0134a6c8ae07EcE26c7b6A7");
 
 
 
