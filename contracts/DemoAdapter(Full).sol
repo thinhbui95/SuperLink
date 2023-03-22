@@ -169,19 +169,20 @@ contract DemoAdapter1 is Ownable,  EthReceiver,ReentrancyGuard{
         //uint256 networkFee;
     }
     function swapStraight(
-        uint256 fromAmount,
+        uint256[] memory fromToAmount,
         address fromToken,
         address toToken,
         SwapAdapter [] memory routers,
         bytes [] memory payloads,
         uint256[] memory amountOut // Only for uniswapV2 
+        //uint256 minimumOut
     ) external nonReentrant payable {
         if (fromToken == address(0)) {
-            require (msg.value >= fromAmount,"Not enough efficient"); 
+            require (msg.value >= fromToAmount[0],"Not enough efficient"); 
         }
         uint256 balanceInNextFrom = IERC20(fromToken).balanceOf(address(routers[0]));
-        uint256 balanceInNextTo = IERC20(toToken).balanceOf(address(this));
-        TransferHelper.onTransferFrom(fromToken,fromAmount, address(routers[0]));
+        uint256 balanceToBeforeSwap = toToken == address(0) ? IERC20(weth).balanceOf(address(this)):IERC20(toToken).balanceOf(address(this));
+        TransferHelper.onTransferFrom(fromToken,fromToAmount[0], address(routers[0]));
         uint256 sizeChain = routers.length;
         for (uint256 i; i< sizeChain; i++) {
             SwapParam memory swapparam = abi.decode(payloads[i], (SwapParam));
@@ -194,11 +195,11 @@ contract DemoAdapter1 is Ownable,  EthReceiver,ReentrancyGuard{
 
         }
         // Claim token for each swap
+        uint256 totalOutputAmount = toToken == address(0) ? (IERC20(weth).balanceOf(address(this)) - balanceToBeforeSwap) : (IERC20(toToken).balanceOf(address(this)) - balanceToBeforeSwap);
+        require(totalOutputAmount >= fromToAmount[1],"amountOut invalid");
         if (toToken == address(0)) {
-            uint256 totalOutputAmount = IERC20(weth).balanceOf(address(this)) - balanceInNextTo;
             TransferHelper.transferNativeToken(totalOutputAmount,msg.sender);
         } else {
-            uint256 totalOutputAmount = IERC20(toToken).balanceOf(address(this)) - balanceInNextTo;
             TransferHelper.transferERC20(toToken,totalOutputAmount,msg.sender);
         }
 
@@ -207,28 +208,29 @@ contract DemoAdapter1 is Ownable,  EthReceiver,ReentrancyGuard{
 
     function swapRoutes(
         //address partner,
-        uint256 fromAmount,
+        uint256[] memory fromToAmount,
         address fromToken,
         address toToken,
         bytes memory data,
+        //uint256 minimumOut,
         IExecutor executor
 
     ) external nonReentrant payable {
         if (fromToken == address(0)) {
-            require (msg.value >= fromAmount,"Not enough efficient"); 
+            require (msg.value >= fromToAmount[0],"Not enough efficient"); 
         }
-        uint256 balanceInNextTo = IERC20(toToken).balanceOf(address(this));
-        TransferHelper.onTransferFrom(fromToken,fromAmount, address(executor));
+        uint256 balanceToBeforeSwap = toToken == address(0) ? IERC20(weth).balanceOf(address(this)):IERC20(toToken).balanceOf(address(this));
+        TransferHelper.onTransferFrom(fromToken,fromToAmount[0], address(executor));
         (bool success,) = address(executor).call(abi.encodeWithSelector(IExecutor.execution.selector,data,address(this),toToken));
         require(success, "Failed");
         
 
         // Claim token for each swap
+        uint256 totalOutputAmount = toToken == address(0) ? (IERC20(weth).balanceOf(address(this)) - balanceToBeforeSwap) : (IERC20(toToken).balanceOf(address(this)) - balanceToBeforeSwap);
+        require(totalOutputAmount >= fromToAmount[1],"amountOut invalid");
         if (toToken == address(0)) {
-            uint256 totalOutputAmount = IERC20(weth).balanceOf(address(this)) - balanceInNextTo;
             TransferHelper.transferNativeToken(totalOutputAmount,msg.sender);
         } else {
-            uint256 totalOutputAmount = IERC20(toToken).balanceOf(address(this)) - balanceInNextTo;
             TransferHelper.transferERC20(toToken,totalOutputAmount,msg.sender);
         }
 

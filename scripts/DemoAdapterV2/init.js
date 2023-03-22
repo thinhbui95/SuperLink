@@ -7,7 +7,7 @@ const Web3EthAbi = require('web3-eth-abi');
 async function main() {
 
     const DemoAdapter = await hre.ethers.getContractFactory("DemoAdapter1");
-    const demoAdapter = await DemoAdapter.attach("0x323b217E49a9D8F7E36E1522853c5e8F519A1653");//BSC Testnet
+    const demoAdapter = await DemoAdapter.attach("0xfaeb77A09b435CB899e58BB3ed00bF9DC72d49Db");//BSC Testnet
     
     var swapparam1 = Web3EthAbi.encodeParameter({
         SwapParam:{
@@ -21,21 +21,21 @@ async function main() {
     },
     {
         //index:1,
-        fromToken:"0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498", //A
-        toToken: "0xCA8eB2dec4Fe3a5abbFDc017dE48E461A936623D", //USDC 
+        fromToken:"0xCA8eB2dec4Fe3a5abbFDc017dE48E461A936623D", //USDC
+        toToken: "0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498", //A
         targetExchange: "0x41E0f861EF8eCdb4d45aCf69e0f9B8ec8600c2e4", //Pair A/USDC
         payload: "0x",
         //networkFee: 11,
     });
    // console.log(swapparam1);
-   var amountIn  = Web3.utils.toWei('100', 'ether');
-   var amountOut  = Web3.utils.toWei('30', 'ether');
+   var amountIn  = Web3.utils.toWei('150', 'ether');
+   var amountOut  = Web3.utils.toWei('75', 'ether');
 
    const encodeAmountIn1 = Web3EthAbi.encodeParameters(
         ['uint256[]'],[[amountIn,amountIn]]
     );
     const encodeAmountOut1 = Web3EthAbi.encodeParameters(
-        ['uint256[]'],[[amountOut,amountIn]]
+        ['uint256[]'],[[amountOut,amountOut]]
     );
     const encodeRouters1 = Web3EthAbi.encodeParameters(
         ['address[]'],[["0xD448BbE015Cd829e2Ad0E7b31f84f55C359aECbf","0xD448BbE015Cd829e2Ad0E7b31f84f55C359aECbf"]]
@@ -69,8 +69,8 @@ async function main() {
         },
     },
     {
-        i:1,
-        j:0,
+        i:0,
+        j:1,
         underlyingSwap: 0,
     });
 
@@ -86,13 +86,13 @@ async function main() {
     },
     {
         //index:1,
-        fromToken:"0xCA8eB2dec4Fe3a5abbFDc017dE48E461A936623D",  //USDC
-        toToken: "0x3304dd20f6Fe094Cb0134a6c8ae07EcE26c7b6A7", //BUSD
+        fromToken:"0x3304dd20f6Fe094Cb0134a6c8ae07EcE26c7b6A7", //BUSD
+        toToken: "0xCA8eB2dec4Fe3a5abbFDc017dE48E461A936623D",  //USDC 
         targetExchange: "0xd5e56cd4c8111643a94ee084df31f44055a1ec9f",  //StableSwap USDC/BUSD
         payload: payload2,
         //networkFee: 11,
     });
-    var amountIn  = Web3.utils.toWei('20', 'ether');
+    var amountIn  = Web3.utils.toWei('10', 'ether');
     var amountOut  = Web3.utils.toWei('0', 'ether');
     const encodeAmountIn2 = Web3EthAbi.encodeParameters(
         ['uint256[]'],[[amountIn,amountIn,amountIn]]
@@ -134,17 +134,17 @@ async function main() {
     // console.log(total);
     //const dataChain1 = Web3EthAbi.decodeParameters(['bytes[]'],total)[0];
 
-    var fromAmount  = Web3.utils.toWei('200', 'ether');  
+    var fromToAmount  = [Web3.utils.toWei('100', 'ether'),0];  
     // var fromToken = "0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498"; //A
-    var fromToken = "0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498"; //A
-    var toToken =  "0x3304dd20f6Fe094Cb0134a6c8ae07EcE26c7b6A7" //BUSD
+    var fromToken =  "0x3304dd20f6Fe094Cb0134a6c8ae07EcE26c7b6A7" //BUSD
+    var toToken =  "0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498"; //A
     var data = total;
     var executor = "0x636129Ea7cB545f76686455D1e67C07e27Fe0b1D";
-    var payloads = [swapparam1,swapparam2];
-    var routers = ["0xD448BbE015Cd829e2Ad0E7b31f84f55C359aECbf","0x2DD4Aa80b9197FdfFF4F15b6a1a35633437cd398"];
-    var amountOut = [Web3.utils.toWei('50', 'ether'),0]
-    await demoAdapter.swapRoutes(fromAmount, fromToken, toToken, data, executor);
-    // await demoAdapter.swapStraight(fromAmount,fromToken,toToken,routers,payloads,amountOut);
+    var payloads = [swapparam2,swapparam1];
+    var routers = ["0x2DD4Aa80b9197FdfFF4F15b6a1a35633437cd398","0xD448BbE015Cd829e2Ad0E7b31f84f55C359aECbf"];
+    var amountOut = [0,Web3.utils.toWei('50', 'ether')]
+    // await demoAdapter.swapRoutes(fromToAmount, fromToken, toToken, data, executor);
+    await demoAdapter.swapStraight(fromToAmount,fromToken,toToken,routers,payloads,amountOut);
 
 
     
