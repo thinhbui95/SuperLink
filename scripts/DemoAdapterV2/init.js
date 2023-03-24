@@ -31,34 +31,34 @@ async function main() {
    var amountIn  = Web3.utils.toWei('100', 'ether');
    var amountOut  = Web3.utils.toWei('50', 'ether');
 
-   const encodeAmountIn1 = Web3EthAbi.encodeParameters(
-        ['uint256[]'],[[amountIn,amountIn]]
-    );
-    const encodeAmountOut1 = Web3EthAbi.encodeParameters(
-        ['uint256[]'],[[amountOut,amountOut]]
-    );
-    const encodeRouters1 = Web3EthAbi.encodeParameters(
-        ['uint256[]'],[[1,1]]
-    );
-    const encodePayload1 = Web3EthAbi.encodeParameters(
-        ['bytes[]'],[[swapparam1,swapparam1]]
-    );
+//    const encodeAmountIn1 = Web3EthAbi.encodeParameters(
+//         ['uint256[]'],[[amountIn,amountIn]]
+//     );
+//     const encodeAmountOut1 = Web3EthAbi.encodeParameters(
+//         ['uint256[]'],[[amountOut,amountOut]]
+//     );
+//     const encodeRouters1 = Web3EthAbi.encodeParameters(
+//         ['uint256[]'],[[1,1]]
+//     );
+//     const encodePayload1 = Web3EthAbi.encodeParameters(
+//         ['bytes[]'],[[swapparam1,swapparam1]]
+//     );
     // var fromToken1 = "0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498" //A
     const element1 = Web3EthAbi.encodeParameter({
         ElementSwap:{
-            encodeRouters :"bytes",
-            encodeAmountIn :"bytes",
-            encodeAmountOut :"bytes",
+            adapters :"uint256[]",
+            amountIns :"uint256[]",
+            amountOuts :"uint256[]",
             // fromToken: "address",
-            encodePayload: "bytes",
+            payloads: "bytes[]",
         },
     },
     {
-        encodeRouters:encodeRouters1,
-        encodeAmountIn:encodeAmountIn1,
-        encodeAmountOut:encodeAmountOut1,
+        adapters:[1,1],
+        amountIns:[amountIn,amountIn],
+        amountOuts:[amountOut,amountOut],
         // fromToken: fromToken1,
-        encodePayload: encodePayload1,
+        payloads: [swapparam1,swapparam1],
     });
 
     const payload2 = Web3EthAbi.encodeParameter({
@@ -94,34 +94,34 @@ async function main() {
     });
     var amountIn  = Web3.utils.toWei('100', 'ether');
     var amountOut  = Web3.utils.toWei('0', 'ether');
-    const encodeAmountIn2 = Web3EthAbi.encodeParameters(
-        ['uint256[]'],[[amountIn]]
-    );
-    const encodeAmountOut2 = Web3EthAbi.encodeParameters(
-        ['uint256[]'],[[amountOut]]
-    );
-    const encodeRouters2 = Web3EthAbi.encodeParameters(
-        ['uint256[]'],[[0]]
-    );
-    const encodePayload2 = Web3EthAbi.encodeParameters(
-        ['bytes[]'],[[swapparam2]]
-    );
+    // const encodeAmountIn2 = Web3EthAbi.encodeParameters(
+    //     ['uint256[]'],[[amountIn,amountIn,amountIn]]
+    // );
+    // const encodeAmountOut2 = Web3EthAbi.encodeParameters(
+    //     ['uint256[]'],[[amountOut,amountOut,amountOut]]
+    // );
+    // const encodeRouters2 = Web3EthAbi.encodeParameters(
+    //     ['uint256[]'],[[0,0,0]]
+    // );
+    // const encodePayload2 = Web3EthAbi.encodeParameters(
+    //     ['bytes[]'],[[swapparam2,swapparam2,swapparam2]]
+    // );
     // var fromToken2 = "0xCA8eB2dec4Fe3a5abbFDc017dE48E461A936623D" //USDC
     const element2 = Web3EthAbi.encodeParameter({
         ElementSwap:{
-            encodeRouters :"bytes",
-            encodeAmountIn :"bytes",
-            encodeAmountOut :"bytes",
+            adapters :"uint256[]",
+            amountIns :"uint256[]",
+            amountOuts :"uint256[]",
             // fromToken: "address",
-            encodePayload: "bytes",
+            payloads: "bytes[]",
         },
     },
     {
-        encodeRouters:encodeRouters2,
-        encodeAmountIn:encodeAmountIn2,
-        encodeAmountOut:encodeAmountOut2,
-        // fromToken: fromToken2,
-        encodePayload: encodePayload2,
+        adapters:[0],
+        amountIns:[amountIn],
+        amountOuts:[amountOut],
+        // fromToken: fromToken1,
+        payloads: [swapparam2],
     });
 
     const chain1 =  Web3EthAbi.encodeParameters(
@@ -139,7 +139,7 @@ async function main() {
     var fromToken =  "0xD67aC77AF1Aa020Ed3D169daB78Cf70aFe1f2498"; //A
     var toToken =  "0x3304dd20f6Fe094Cb0134a6c8ae07EcE26c7b6A7" //BUSD 
     var data = total;
-    var executor = "0x840f9C51E811E2622DE79F9d936b6a6B3EBCFcDc";
+    var executor = "0xc97B3BC075a1CC41264Ed8B94227C8595ae11274";
     var payloads = [swapparam2,swapparam1];
     var routers = ["0x2DD4Aa80b9197FdfFF4F15b6a1a35633437cd398","0xD448BbE015Cd829e2Ad0E7b31f84f55C359aECbf"];
     var amountOut = [0,Web3.utils.toWei('50', 'ether')]
