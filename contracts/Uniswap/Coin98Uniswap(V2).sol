@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "../Helper.sol";
 interface pairSwap{
@@ -9,7 +8,7 @@ interface pairSwap{
 }
 
 
-contract Coin98UniswapV2 is Ownable,ReentrancyGuard{
+contract Coin98UniswapV2 is Ownable{
     uint256 private constant _UNISWAP_PAIR_SWAP_CALL_SELECTOR_32 =
         0x022c0d9f00000000000000000000000000000000000000000000000000000000;
 
@@ -61,7 +60,7 @@ contract Coin98UniswapV2 is Ownable,ReentrancyGuard{
     }
 
 
-    function swap(uint256 amount0Out, uint256 amount1Out, address to, bytes memory data) external nonReentrant{
+    function swap(uint256 amount0Out, uint256 amount1Out, address to, bytes memory data) external {
 
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         //require(swapParam.index == 10, "Invalid Route");
