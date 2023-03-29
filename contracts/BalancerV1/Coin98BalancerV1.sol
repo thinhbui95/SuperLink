@@ -9,7 +9,7 @@ contract Coin98BalancerV1 is BalancerV1 {
         IERC20 fromToken;
         IERC20 toToken;
         address targetExchange;
-        uint percent;
+        //uint percent;
         bytes payload;
         //uint256 networkFee;
     }

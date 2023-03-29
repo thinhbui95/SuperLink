@@ -8,11 +8,11 @@ async function main() {
 
     const Executor = await hre.ethers.getContractFactory("Executor");
     const executor = await Executor.attach("0xc97B3BC075a1CC41264Ed8B94227C8595ae11274");//BSC Testnet
-    var _contract = "0xDB711F5b6d93ABd0F5E4e2Db8e809077b3E63BA6";
+    var _contract = "0xDaFB8EbBA2255f4516b793e2802EB94694a1e3A6";
     await executor.addAdapters(_contract);
     // await executor.addAdapters();
-    // var a1 = await executor.Adapter(0);
-    // console.log(a1);
+    var a1 = await executor.owner();
+    console.log(a1);
     
    
 

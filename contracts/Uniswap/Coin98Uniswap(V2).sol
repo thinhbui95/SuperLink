@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
-//import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-//import "@openzeppelin/contracts/access/Ownable.sol";
+// import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+// import "@openzeppelin/contracts/access/Ownable.sol";
 import "../Helper.sol";
 interface pairSwap{
     function token0() external returns(address);
 }
 
 
-abstract contract Coin98UniswapV2 {
+contract Coin98UniswapV2 {
     uint256 private constant _UNISWAP_PAIR_SWAP_CALL_SELECTOR_32 =
         0x022c0d9f00000000000000000000000000000000000000000000000000000000;
 
@@ -23,8 +23,8 @@ abstract contract Coin98UniswapV2 {
         //uint256 networkFee;
     }
 
-    address public token0;
-    address public token1;
+    // address public token0;
+    // address public token1;
 
     function poolSwap(
         uint256 _amount,
@@ -61,7 +61,7 @@ abstract contract Coin98UniswapV2 {
     }
 
 
-    function swapUniV2(uint256 amount0Out, uint256 amount1Out, bytes memory data) external{
+    function swap(uint256 amount0Out, uint256 amount1Out, bytes memory data) external{
 
         SwapParamUniV2 memory swapParam = abi.decode(data, (SwapParamUniV2));
         //require(swapParam.index == 10, "Invalid Route");

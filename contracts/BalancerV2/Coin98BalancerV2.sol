@@ -1,7 +1,7 @@
 pragma solidity ^0.8.0;
 import "./BalancerV2.sol";
 
-contract Coin98BalancerV1 is BalancerV2 {
+contract Coin98BalancerV2 is BalancerV2 {
     using SafeMath for uint256;
 
     struct SwapParam {
@@ -15,7 +15,7 @@ contract Coin98BalancerV1 is BalancerV2 {
     }
 
 
-    function swap(uint amount0Out, uint amount1Out, address payable to, bytes memory data) external payable {
+    function swap(uint amount0Out, uint amount1Out, bytes memory data) external payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         //require(swapParam.index == 4, "Invalid Route");
         swapOnBalancer(
@@ -25,7 +25,7 @@ contract Coin98BalancerV1 is BalancerV2 {
             swapParam.targetExchange,
             swapParam.payload
         );
-        uint256 balance = swapParam.toToken.balanceOf(address(this));
-        Utils.transferTokens(address(swapParam.toToken), to, balance);
+        // uint256 balance = swapParam.toToken.balanceOf(address(this));
+        // Utils.transferTokens(address(swapParam.toToken), to, balance);
     }
 }

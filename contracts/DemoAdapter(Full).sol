@@ -6,8 +6,8 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "./Helper.sol";
 import "./library/Utils.sol";
-import "./CurveV2/Coin98CurveV2.sol";
-import "./Uniswap/Coin98Uniswap(V2).sol";
+// import "./CurveV2/Coin98CurveV2.sol";
+// import "./Uniswap/Coin98Uniswap(V2).sol";
 
 interface PartnerSuperLink {
     function PARTNER_FEE() external view returns (uint256);

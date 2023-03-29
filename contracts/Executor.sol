@@ -8,29 +8,29 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 // import "./Uniswap/Coin98Uniswap(V2).sol";
 
 
-// interface SwapAdaptor {
-//     function swap(uint256 amount0Out, uint256 amount1Out, address to, bytes memory data) external ;
-// }
+interface SwapAdaptor {
+    function swap(uint256 amount0Out, uint256 amount1Out, bytes memory data) external ;
+}
 contract Executor is Ownable, ReentrancyGuard{
-    mapping(uint256 => bytes4) private Adapter;
+    // mapping(uint256 => bytes4)  public Adapter;
 
     struct ElementSwap {
-        uint256[] adapters;
+        address[] adapters;
         uint256[] amountIns;
         uint256[] amountOuts;
         //address fromToken;
         bytes[] payloads;
 
     }
-    address private contractDelegate;
-    function addAdapters(address _contract) public onlyOwner {
-        contractDelegate = _contract;
-        (bool success, ) = contractDelegate.delegatecall(abi.encodeWithSignature("addAdapter()"));
-            require(success,"Failed");
+    // address private contractDelegate;
+    // function addAdapters(address _contract) public onlyOwner {
+    //     contractDelegate = _contract;
+    //     (bool success, ) = contractDelegate.delegatecall(abi.encodeWithSignature("addAdapter()"));
+    //         require(success,"Failed");
 
-    }
-    function getCall(bytes4 adapter,uint256 amount0Out, uint256 amount1Out, bytes memory data) internal pure returns(bytes memory){
-        return abi.encodeWithSelector(adapter,amount0Out,amount1Out, data);
+    // }
+    function getCall(uint256 amount0Out, uint256 amount1Out, bytes memory data) internal pure returns(bytes memory){
+        return abi.encodeWithSelector(SwapAdaptor.swap.selector,amount0Out,amount1Out, data);
     }
 
     // function delegateCallContract(address _contract) public onlyOwner {
@@ -47,14 +47,14 @@ contract Executor is Ownable, ReentrancyGuard{
                 ElementSwap memory element = abi.decode(elements[j], (ElementSwap));
                 uint256[] memory amountIns = element.amountIns;
                 uint256[] memory amountOuts = element.amountOuts;
-                uint256[] memory indexs = element.adapters;
+                address[] memory adapters = element.adapters;
                 bytes[] memory payloads = element.payloads;
                 //address fromToken = element.fromToken;
                 uint256 sizeElementSwap = amountIns.length;
                 for (uint256 k ; k<sizeElementSwap; k++){
                     //TransferHelper.transferERC20(fromToken,amountIn[k],routers[k]);
-                    bytes memory getcall = getCall(Adapter[indexs[k]],amountIns[k], amountOuts[k],payloads[k]);
-                    (bool success, ) = contractDelegate.delegatecall(getcall);
+                    bytes memory getcall = getCall(amountIns[k], amountOuts[k],payloads[k]);
+                    (bool success, ) = adapters[k].delegatecall(getcall);
                     require(success,"Failed Call");
                 }
             }

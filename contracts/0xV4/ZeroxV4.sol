@@ -2,11 +2,11 @@ pragma solidity ^0.8.0;
 import "../interface/IZeroxV4.sol";
 import "../utils/WethProvider.sol";
 import "../library/Utils.sol";
-import "../interface/IWETH.sol";
+// import "../interface/IWETH.sol";
 
 
 
-abstract contract ZeroxV4 is WethProvider {
+abstract contract ZeroxV4  {
 
     struct ZeroxV4Data {
         LibOrderV4.Order order;
@@ -48,12 +48,12 @@ abstract contract ZeroxV4 is WethProvider {
             payload
         );
 
-        if (address(fromToken) == Utils.ethAddress()) {
-            uint256 remainingAmount = Utils.tokenBalance(WETH, address(this));
-            if (remainingAmount > 0) {
-              IWETH(WETH).withdraw(remainingAmount);
-            }
-        }
+        // if (address(fromToken) == Utils.ethAddress()) {
+        //     uint256 remainingAmount = Utils.tokenBalance(WETH, address(this));
+        //     if (remainingAmount > 0) {
+        //       IWETH(WETH).withdraw(remainingAmount);
+        //     }
+        // }
     }
 
     function _swapOn0xV4(
@@ -69,12 +69,12 @@ abstract contract ZeroxV4 is WethProvider {
         address _toToken = address(toToken);
         require(_fromToken != _toToken, "fromToken should be different from toToken");
 
-        if (address(fromToken) == Utils.ethAddress()) {
-            _fromToken = WETH;
-        }
-        else if (address(toToken) == Utils.ethAddress()) {
-            _toToken = WETH;
-        }
+        // if (address(fromToken) == Utils.ethAddress()) {
+        //     _fromToken = WETH;
+        // }
+        // else if (address(toToken) == Utils.ethAddress()) {
+        //     _toToken = WETH;
+        // }
 
         require(address(data.order.takerToken) == address(_fromToken), "Invalid from token!!");
         require(address(data.order.makerToken) == address(_toToken), "Invalid to token!!");
@@ -87,9 +87,9 @@ abstract contract ZeroxV4 is WethProvider {
             uint128(fromAmount)
         );
 
-        if (address(toToken) == Utils.ethAddress()) {
-            uint256 receivedAmount = Utils.tokenBalance(WETH, address(this));
-            IWETH(WETH).withdraw(receivedAmount);
-        }
+        // if (address(toToken) == Utils.ethAddress()) {
+        //     uint256 receivedAmount = Utils.tokenBalance(WETH, address(this));
+        //     IWETH(WETH).withdraw(receivedAmount);
+        // }
     }
 }

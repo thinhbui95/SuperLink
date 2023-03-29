@@ -2,7 +2,7 @@ pragma solidity ^0.8.0;
 import "../interface/IBalancerV2.sol";
 import "../library/Utils.sol";
 
-abstract contract BalancerV2  {
+contract BalancerV2  {
     struct BalancerDataV2 {
         bytes32 poolId;
         IBalancerV2.SwapKind kind;

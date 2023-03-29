@@ -25,5 +25,13 @@ interface IBalancerV2 {
         bool toInternalBalance;
     }
 
+    struct BatchSwapStep {
+        bytes32 poolId;
+        uint256 assetInIndex;
+        uint256 assetOutIndex;
+        uint256 amount;
+        bytes userData;
+}
+
 
 }

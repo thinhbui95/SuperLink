@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-import "../utils/WethProvider.sol";
+// import "../utils/WethProvider.sol";
 import "../library/Utils.sol";
 import "../interface/IWETH.sol";
 import "../interface/ISwapRouterUniV3.sol";
 
 
-abstract contract UniswapV3 is WethProvider{
+abstract contract UniswapV3{
 
   struct UniswapV3Data {
     uint24 fee;

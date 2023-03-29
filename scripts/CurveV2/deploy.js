@@ -6,7 +6,7 @@ async function main() {
     //const TokenOKC = await upgrades.deployProxy(tokenOKC);
     // var weth = "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6" //Goreli
     var weth = "0x2DD4Aa80b9197FdfFF4F15b6a1a35633437cd398" //BSC testnet
-    const coin98CurveV2 =await Coin98CurveV2.deploy(weth);
+    const coin98CurveV2 =await Coin98CurveV2.deploy();
 
     await coin98CurveV2.deployed();
 

@@ -410,132 +410,140 @@ async function main() {
 //         console.log(curve);
 
 
-    var payload = Web3EthAbi.encodeParameter({
-                BalancerV2:{
-                    poolId:"bytes32",
-                    kind:"uint256",
-                    userData: "bytes",
-                    fromInternalBalance: "bool",
-                    toInternalBalance: "bool",
-                    limit: "uint256",
-                    deadline: "uint256"
-                },
-            },
-            {
-                poolId:"0x148ce9b50be946a96e94a4f5479b771bab9b1c59000100000000000000000054",
-                kind:1,
-                userData: "0x",
-                fromInternalBalance: 0,
-                toInternalBalance: 0,
-                limit: 1234,
-                deadline: 1234
-            });
+    // var payload = Web3EthAbi.encodeParameter({
+    //             BalancerV2:{
+    //                 poolId:"bytes32",
+    //                 kind:"uint256",
+    //                 userData: "bytes",
+    //                 fromInternalBalance: "bool",
+    //                 toInternalBalance: "bool",
+    //                 limit: "uint256",
+    //                 deadline: "uint256"
+    //             },
+    //         },
+    //         {
+    //             poolId:"0x148ce9b50be946a96e94a4f5479b771bab9b1c59000100000000000000000054",
+    //             kind:1,
+    //             userData: "0x",
+    //             fromInternalBalance: 0,
+    //             toInternalBalance: 0,
+    //             limit: 1234,
+    //             deadline: 1234
+    //         });
 
-            const swapparam = Web3EthAbi.encodeParameter({
-                SwapParam:{
-                    //index:"uint256",
-                    fromToken:"address",
-                    toToken:"address",
-                    targetExchange: "address",
-                    payload: "bytes",
-                    //networkFee: "uint256"
-                },
-            },
-            {
-                    //index:1,
-                    fromToken:"0x1aE0EA34a72D944a8C7603FfB3eC30a6669E454C",
-                    toToken: "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4",
-                    targetExchange: "0x1aE0EA34a72D944a8C7603FfB3eC30a6669E454C",
-                    payload: payload,
-                    //networkFee: 111,
-            });
+    //         const swapparam = Web3EthAbi.encodeParameter({
+    //             SwapParam:{
+    //                 //index:"uint256",
+    //                 fromToken:"address",
+    //                 toToken:"address",
+    //                 targetExchange: "address",
+    //                 payload: "bytes",
+    //                 //networkFee: "uint256"
+    //             },
+    //         },
+    //         {
+    //                 //index:1,
+    //                 fromToken:"0x1aE0EA34a72D944a8C7603FfB3eC30a6669E454C",
+    //                 toToken: "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4",
+    //                 targetExchange: "0x1aE0EA34a72D944a8C7603FfB3eC30a6669E454C",
+    //                 payload: payload,
+    //                 //networkFee: 111,
+    //         });
 
-            const encodeAmountIn = Web3EthAbi.encodeParameters(
-                ['uint256[]'],[['111']]
-            );
-            const encodeAmountOut = Web3EthAbi.encodeParameters(
-                ['uint256[]'],[['1111']]
-            );
-            const encodeRouters = Web3EthAbi.encodeParameters(
-                ['address[]'],[["0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c"]]
-            );
-            const encodePayload = Web3EthAbi.encodeParameters(
-                ['bytes[]'],[[swapparam]]
-            );
+    //         const encodeAmountIn = Web3EthAbi.encodeParameters(
+    //             ['uint256[]'],[['111']]
+    //         );
+    //         const encodeAmountOut = Web3EthAbi.encodeParameters(
+    //             ['uint256[]'],[['1111']]
+    //         );
+    //         const encodeRouters = Web3EthAbi.encodeParameters(
+    //             ['address[]'],[["0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c"]]
+    //         );
+    //         const encodePayload = Web3EthAbi.encodeParameters(
+    //             ['bytes[]'],[[swapparam]]
+    //         );
 
-            var fromToken = "0x583031D1113aD414F02576BD6afaBfb302140225";
-            const element = Web3EthAbi.encodeParameter({
-            ElementSwap:{
-                encodeRouters :"bytes",
-                encodeAmountIn :"bytes",
-                encodeAmountOut: "bytes",
-                fromToken: "address",
-                encodePayload: "bytes",
-            },
-            },
-        {
-            encodeRouters:encodeRouters,
-            encodeAmountIn:encodeAmountIn,
-            encodeAmountOut:encodeAmountOut,
-            fromToken: fromToken,
-            encodePayload: encodePayload,
-        });
+    //         var fromToken = "0x583031D1113aD414F02576BD6afaBfb302140225";
+    //         const element = Web3EthAbi.encodeParameter({
+    //         ElementSwap:{
+    //             encodeRouters :"bytes",
+    //             encodeAmountIn :"bytes",
+    //             encodeAmountOut: "bytes",
+    //             fromToken: "address",
+    //             encodePayload: "bytes",
+    //         },
+    //         },
+    //     {
+    //         encodeRouters:encodeRouters,
+    //         encodeAmountIn:encodeAmountIn,
+    //         encodeAmountOut:encodeAmountOut,
+    //         fromToken: fromToken,
+    //         encodePayload: encodePayload,
+    //     });
 
-        const chain =  Web3EthAbi.encodeParameters(
-            ['bytes[]'],[[element]]
-        );
-            //console.log(chain2);
+    //     const chain =  Web3EthAbi.encodeParameters(
+    //         ['bytes[]'],[[element]]
+    //     );
+    //         //console.log(chain2);
             
-        const total = Web3EthAbi.encodeParameters(
-            ['bytes[]'],[[chain]]
-        );
-            console.log(total)
-        const dataChain1 = Web3EthAbi.decodeParameters(['bytes[]'],total)[0][0];
-        // console.log(dataChain1)
-        const adaptor1 = Web3EthAbi.decodeParameters(['bytes[]'],dataChain1)[0][0];
-        // console.log(adaptor1);
-        const ele1 = Web3EthAbi.decodeParameter(
-                    {        
-                        "ElementSwap":{
-                            "encodeRouters" :"bytes",
-                            "encodeAmountIn" :"bytes",
-                            "encodeAmountOut" :"bytes",
-                            "fromToken": "address",
-                            "encodePayload": "bytes",
-                        },
-                    },adaptor1);
+    //     const total = Web3EthAbi.encodeParameters(
+    //         ['bytes[]'],[[chain]]
+    //     );
+    //         console.log(total)
+    //     const dataChain1 = Web3EthAbi.decodeParameters(['bytes[]'],total)[0][0];
+    //     // console.log(dataChain1)
+    //     const adaptor1 = Web3EthAbi.decodeParameters(['bytes[]'],dataChain1)[0][0];
+    //     // console.log(adaptor1);
+    //     const ele1 = Web3EthAbi.decodeParameter(
+    //                 {        
+    //                     "ElementSwap":{
+    //                         "encodeRouters" :"bytes",
+    //                         "encodeAmountIn" :"bytes",
+    //                         "encodeAmountOut" :"bytes",
+    //                         "fromToken": "address",
+    //                         "encodePayload": "bytes",
+    //                     },
+    //                 },adaptor1);
             
-        // console.log( ele1.encodePayload);
-        const payloadele1 = Web3EthAbi.decodeParameters(['bytes[]'],ele1.encodePayload)[0][0];
-        // console.log(payloadele1);
-        const swapele1 = Web3EthAbi.decodeParameter(
-                    {        
-                        "SwapParam":{
-                            //"index":"uint256",
-                            "fromToken":"address",
-                            "toToken":"address",
-                            "targetExchange": "address",
-                            "payload": "bytes",
-                            //"networkFee": "uint256"
-                        },
-                    },payloadele1);
-            // console.log(swapele1);
+    //     // console.log( ele1.encodePayload);
+    //     const payloadele1 = Web3EthAbi.decodeParameters(['bytes[]'],ele1.encodePayload)[0][0];
+    //     // console.log(payloadele1);
+    //     const swapele1 = Web3EthAbi.decodeParameter(
+    //                 {        
+    //                     "SwapParam":{
+    //                         //"index":"uint256",
+    //                         "fromToken":"address",
+    //                         "toToken":"address",
+    //                         "targetExchange": "address",
+    //                         "payload": "bytes",
+    //                         //"networkFee": "uint256"
+    //                     },
+    //                 },payloadele1);
+    //         // console.log(swapele1);
 
-            const balancerv2 = Web3EthAbi.decodeParameter(
-                            {        
-                                "BalancerV2":{
-                                    "poolId":"bytes32",
-                                    "kind":"uint256",
-                                    "userData": "bytes",
-                                    "fromInternalBalance": "bool",
-                                    "toInternalBalance": "bool",
-                                    "limit": "uint256",
-                                    "deadline": "uint256"
-                                },
-                        },swapele1.payload);
+    //         const balancerv2 = Web3EthAbi.decodeParameter(
+    //                         {        
+    //                             "BalancerV2":{
+    //                                 "poolId":"bytes32",
+    //                                 "kind":"uint256",
+    //                                 "userData": "bytes",
+    //                                 "fromInternalBalance": "bool",
+    //                                 "toInternalBalance": "bool",
+    //                                 "limit": "uint256",
+    //                                 "deadline": "uint256"
+    //                             },
+    //                     },swapele1.payload);
                 // console.log(balancerv2);
+        var amountIns  = [Web3.utils.toWei('30000', 'ether'),Web3.utils.toWei('30000', 'ether'),Web3.utils.toWei('40000', 'ether')];
+        var maxBPTAmountIn = Web3.utils.toWei('199999.99999', 'ether')
                 
-                
+        const encodeAmountOut1 = Web3EthAbi.encodeParameters(
+            ['uint256', 'uint256[]'],[0,amountIns]);  
+        // var data  = "0x00000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000005b8d800000000000000000000000000000000000000000000000000000000000000001";
+        // const dataChain1 = Web3EthAbi.decodeParameters(['uint256', 'uint256'],data)
+       
+        
+        console.log(encodeAmountOut1)
         
         
 

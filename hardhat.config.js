@@ -28,7 +28,7 @@ module.exports = {
                 settings: {
                     optimizer: {
                         enabled: true,
-                        runs: 999999,
+                        runs: 5,
                     },
                 },
             },
@@ -64,26 +64,26 @@ module.exports = {
         //     chainId: 420,
         //     url: "https://goerli.optimism.io/",
         // },
-        bsc_testnet: {
-            // accounts: 
-            //     mnemonic: process.env.TESTNET_MNEMONIC,
-            // },
-            accounts: [process.env.TESTNET_PRIVATE_KEY],
-            chainId: 97,
-            url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-            gas: 2100000,
-            gasPrice: 10000000000
-        },
+        // bsc_testnet: {
+        //     // accounts: 
+        //     //     mnemonic: process.env.TESTNET_MNEMONIC,
+        //     // },
+        //     accounts: [process.env.TESTNET_PRIVATE_KEY],
+        //     chainId: 97,
+        //     url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+        //     gas: 2100000,
+        //     gasPrice: 10000000000
+        // },
         // bsc: {
         //   accounts: [process.env.MAINNET_PRIVATE_KEY],
         //   chainId: 56,
         //   url: "https://bsc-dataseed.binance.org/",
         // },
-        // ETH_Goerli: {
-        //     accounts:  [process.env.TESTNET_PRIVATE_KEY],
-        //     chainId: 5,
-        //     url: "https://rpc.ankr.com/eth_goerli",
-        // },
+        ETH_Goerli: {
+            accounts:  [process.env.TESTNET_PRIVATE_KEY],
+            chainId: 5,
+            url: "https://rpc.ankr.com/eth_goerli",
+        },
     },
     etherscan: {
         // Your API key for Etherscan

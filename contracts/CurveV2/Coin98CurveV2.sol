@@ -6,7 +6,7 @@ import "./CurveV2.sol";
 
 
 
-abstract contract Coin98CurveV2 is CurveV2{
+contract Coin98CurveV2 is CurveV2{
     using SafeMath for uint256;
 
     struct SwapParamCurveV2 {
@@ -20,7 +20,7 @@ abstract contract Coin98CurveV2 is CurveV2{
     }
 
 
-    function swapCurveV2(uint amount0Out, uint amount1Out,  bytes memory data) external  {
+    function swap(uint amount0Out, uint amount1Out,  bytes memory data) external  {
         SwapParamCurveV2 memory swapParam = abi.decode(data, (SwapParamCurveV2));
         //require(swapParam.index == 9, "Invalid Route");
         //uint256 preBalance = swapParam.toToken.balanceOf(address(this));

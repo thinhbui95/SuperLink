@@ -2145,7 +2145,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2183,7 +2183,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2225,7 +2225,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2261,7 +2261,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2300,7 +2300,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2336,7 +2336,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2376,7 +2376,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2414,7 +2414,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2450,7 +2450,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2478,15 +2478,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/Helper.sol": {
-      "lastModificationDate": 1679496404297,
-      "contentHash": "87f74318240e2a91761e5d99b0ddab68",
+      "lastModificationDate": 1679887440634,
+      "contentHash": "7d7ec1bc05d7f54a8e6c57b37af7731d",
       "sourceName": "contracts/Helper.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2522,7 +2522,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2558,7 +2558,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2598,7 +2598,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2634,7 +2634,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2670,7 +2670,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2706,7 +2706,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2745,7 +2745,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2783,7 +2783,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2813,15 +2813,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/UniswapV3/UniswapV3.sol": {
-      "lastModificationDate": 1679496404292,
-      "contentHash": "43c7412c755d34aad8eeb2580a694889",
+      "lastModificationDate": 1679666489453,
+      "contentHash": "908a98ca5b6a599d1b907ce9c05cbd2c",
       "sourceName": "contracts/UniswapV3/UniswapV3.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2841,7 +2841,6 @@
         }
       },
       "imports": [
-        "../utils/WethProvider.sol",
         "../library/Utils.sol",
         "../interface/IWETH.sol",
         "../interface/ISwapRouterUniV3.sol"
@@ -2862,7 +2861,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2898,7 +2897,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2941,7 +2940,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -2977,7 +2976,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3005,15 +3004,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/BalancerV1/Coin98BalancerV1.sol": {
-      "lastModificationDate": 1679496404293,
-      "contentHash": "6ccbea4fcf2a9457f12183ce8dc1a08f",
+      "lastModificationDate": 1679752172774,
+      "contentHash": "74939a4b42e02c99af086abf064a0308",
       "sourceName": "contracts/BalancerV1/Coin98BalancerV1.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3051,7 +3050,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3097,7 +3096,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3135,7 +3134,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3171,7 +3170,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3199,15 +3198,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/Executor.sol": {
-      "lastModificationDate": 1679649959152,
-      "contentHash": "37863001ab3327d739ff60aa8c172cf6",
+      "lastModificationDate": 1679753262798,
+      "contentHash": "c485ff632572d65d463eebf74cb12033",
       "sourceName": "contracts/Executor.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3236,19 +3235,20 @@
         "^0.8.0"
       ],
       "artifacts": [
-        "Executor"
+        "Executor",
+        "SwapAdaptor"
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/DemoAdapter(Full).sol": {
-      "lastModificationDate": 1679496404299,
-      "contentHash": "acfa845fac7f3604bcdc4fbeefc3cf49",
+      "lastModificationDate": 1679666440684,
+      "contentHash": "38f63424d55e5a2875b54d0616ec4b6c",
       "sourceName": "contracts/DemoAdapter(Full).sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3273,9 +3273,7 @@
         "@openzeppelin/contracts/security/ReentrancyGuard.sol",
         "@openzeppelin/contracts/utils/math/SafeMath.sol",
         "./Helper.sol",
-        "./library/Utils.sol",
-        "./CurveV2/Coin98CurveV2.sol",
-        "./Uniswap/Coin98Uniswap(V2).sol"
+        "./library/Utils.sol"
       ],
       "versionPragmas": [
         "^0.8.0"
@@ -3289,15 +3287,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/CurveV2/Coin98CurveV2.sol": {
-      "lastModificationDate": 1679496404291,
-      "contentHash": "34ea93767a9ebd5941c01700484ef080",
+      "lastModificationDate": 1679754719442,
+      "contentHash": "22ad8c411675105d542dc6cf8faa2781",
       "sourceName": "contracts/CurveV2/Coin98CurveV2.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3327,15 +3325,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/Uniswap/Coin98Uniswap(V2).sol": {
-      "lastModificationDate": 1679496404267,
-      "contentHash": "33a02a21b1875c913cf8387beb87dc06",
+      "lastModificationDate": 1679758765403,
+      "contentHash": "258daf9d1abe5d399c97a521e41315b1",
       "sourceName": "contracts/Uniswap/Coin98Uniswap(V2).sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3375,7 +3373,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3415,7 +3413,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3451,7 +3449,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3482,15 +3480,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/Delegate.sol": {
-      "lastModificationDate": 1679648015798,
-      "contentHash": "4298d23c2cf8eaf96b4c77988ac92409",
+      "lastModificationDate": 1679754280058,
+      "contentHash": "555236d98df380b79e4a785b4b901f88",
       "sourceName": "contracts/Delegate.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3509,27 +3507,20 @@
           }
         }
       },
-      "imports": [
-        "./CurveV2/Coin98CurveV2.sol",
-        "./Uniswap/Coin98Uniswap(V2).sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Delegate"
-      ]
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/0xV4/ZeroxV4.sol": {
-      "lastModificationDate": 1679496404298,
-      "contentHash": "0430620618b3bc3719ce62a307331e7f",
+      "lastModificationDate": 1679728146955,
+      "contentHash": "5c8f56787cea19d2893a1fbd4ddaa343",
       "sourceName": "contracts/0xV4/ZeroxV4.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3551,8 +3542,7 @@
       "imports": [
         "../interface/IZeroxV4.sol",
         "../utils/WethProvider.sol",
-        "../library/Utils.sol",
-        "../interface/IWETH.sol"
+        "../library/Utils.sol"
       ],
       "versionPragmas": [
         "^0.8.0"
@@ -3570,7 +3560,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3608,7 +3598,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3638,15 +3628,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/0xV4/Coin98ZeroxV4.sol": {
-      "lastModificationDate": 1679496404298,
-      "contentHash": "18031293563bb8ed64314f409ffb2099",
+      "lastModificationDate": 1679754309668,
+      "contentHash": "c7171a76fe29426a3d27f736267a2dee",
       "sourceName": "contracts/0xV4/Coin98ZeroxV4.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3676,15 +3666,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/UniswapV3/Coin98UniswapV3.sol": {
-      "lastModificationDate": 1679496404292,
-      "contentHash": "33972f3fdc9681c7b698d0a066588576",
+      "lastModificationDate": 1679758013704,
+      "contentHash": "6fdc08d0f0725a06de9bf686823a0e6c",
       "sourceName": "contracts/UniswapV3/Coin98UniswapV3.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3722,7 +3712,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3760,7 +3750,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3800,7 +3790,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3836,7 +3826,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3874,7 +3864,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3912,7 +3902,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3952,7 +3942,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -3988,7 +3978,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -4024,7 +4014,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -4054,15 +4044,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/BalancerV2/BalancerV2.sol": {
-      "lastModificationDate": 1679496404301,
-      "contentHash": "3c68d23166d92e2da6abea392ece5022",
+      "lastModificationDate": 1679970728072,
+      "contentHash": "2f105af4c5575b1d88b0c83f9906767b",
       "sourceName": "contracts/BalancerV2/BalancerV2.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -4093,15 +4083,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/interface/IBalancerV2.sol": {
-      "lastModificationDate": 1679496404273,
-      "contentHash": "71875cb90bad7979f2b83217c95714a4",
+      "lastModificationDate": 1679970694679,
+      "contentHash": "e2e4d0a9891972eaa6bfcc83a6c78bf3",
       "sourceName": "contracts/interface/IBalancerV2.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -4139,7 +4129,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -4167,15 +4157,15 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/BalancerV2/Coin98BalancerV2.sol": {
-      "lastModificationDate": 1679496404301,
-      "contentHash": "4d40fca9f8dd91fd563911f77976c837",
+      "lastModificationDate": 1679979285428,
+      "contentHash": "a1e33f89a5f8fda6e63f568924b46f07",
       "sourceName": "contracts/BalancerV2/Coin98BalancerV2.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -4201,7 +4191,7 @@
         "^0.8.0"
       ],
       "artifacts": [
-        "Coin98BalancerV1"
+        "Coin98BalancerV2"
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/ExecutorV2.sol": {
@@ -4213,7 +4203,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -4245,7 +4235,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -4281,7 +4271,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 999999
+            "runs": 5
           },
           "outputSelection": {
             "*": {
@@ -4306,6 +4296,429 @@
       ],
       "artifacts": [
         "IMStable"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1679644933291,
+      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1679644933229,
+      "contentHash": "834a0dde221759af42b030253315b086",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/USDT/USDT.sol": {
+      "lastModificationDate": 1679751578630,
+      "contentHash": "8d6c325f32a3ef0bc3766dff1ca68b16",
+      "sourceName": "contracts/USDT/USDT.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "USDT"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/USDC/USDC.sol": {
+      "lastModificationDate": 1679751578644,
+      "contentHash": "4402f58ec25f5c5025ed5a51de645761",
+      "sourceName": "contracts/USDC/USDC.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "USDC"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/BUSD/BUSD.sol": {
+      "lastModificationDate": 1679751578616,
+      "contentHash": "6674d14e93ddd7078f0a10698274448b",
+      "sourceName": "contracts/BUSD/BUSD.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BUSD"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/DoDoV2/DoDoV2.sol": {
+      "lastModificationDate": 1679725544633,
+      "contentHash": "eb1f7343b98eed0194a8cea6d9039083",
+      "sourceName": "contracts/DoDoV2/DoDoV2.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interface/IDODOV2Proxy.sol",
+        "../library/Utils.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DoDoV2"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/interface/IDODOV2Proxy.sol": {
+      "lastModificationDate": 1679725450173,
+      "contentHash": "e0ef711ee88191529344e771e36a5768",
+      "sourceName": "contracts/interface/IDODOV2Proxy.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IDODOV2Proxy"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/DoDoV2/Coin98DoDoV2.sol": {
+      "lastModificationDate": 1679729534443,
+      "contentHash": "aec2ae1e2c0c3985ae57a068cc77c719",
+      "sourceName": "contracts/DoDoV2/Coin98DoDoV2.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./DoDoV2.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Coin98DoDoV2"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/PancakeStableSwap/PancakeStableSwapLP.sol": {
+      "lastModificationDate": 1679754258674,
+      "contentHash": "610144c6650330da4657f4b8afd2ed1d",
+      "sourceName": "contracts/PancakeStableSwap/PancakeStableSwapLP.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PancakeStableSwapLP"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/PancakeStableSwap/PancakeStableSwap.sol": {
+      "lastModificationDate": 1679886269863,
+      "contentHash": "0273506f4bb15039846bf762f632c222",
+      "sourceName": "contracts/PancakeStableSwap/PancakeStableSwap.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "./PancakeStableSwapLP.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PancakeStableSwap"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/TokenA/TokenA.sol": {
+      "lastModificationDate": 1679889429211,
+      "contentHash": "ad3e36860fd9de84f211464df46e9a23",
+      "sourceName": "contracts/TokenA/TokenA.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TokenA"
       ]
     }
   }

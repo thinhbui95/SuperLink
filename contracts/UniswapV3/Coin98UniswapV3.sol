@@ -11,13 +11,13 @@ contract Coin98UniswapV3 is UniswapV3{
         IERC20 fromToken;
         IERC20 toToken;
         address targetExchange;
-        uint percent;
+        //uint percent;
         bytes payload;
         //uint256 networkFee;
     }
-    constructor(address _weth) WethProvider(_weth) {}
+    // constructor(address _weth) WethProvider(_weth) {}
 
-    function swap(uint amount0Out, uint amount1Out, address payable to, bytes memory data) external payable {
+    function swap(uint amount0Out, uint amount1Out, bytes memory data) external payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         //require(swapParam.index == 5, "Invalid Route");
         swapOnUniswapV3(
@@ -27,7 +27,7 @@ contract Coin98UniswapV3 is UniswapV3{
             swapParam.targetExchange,
             swapParam.payload
         );
-        uint256 balance = swapParam.toToken.balanceOf(address(this));
-        Utils.transferTokens(address(swapParam.toToken), to, balance);
+        // uint256 balance = swapParam.toToken.balanceOf(address(this));
+        // Utils.transferTokens(address(swapParam.toToken), to, balance);
     }
 }

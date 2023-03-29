@@ -15,8 +15,8 @@ contract Coin98ZeroxV4 is ZeroxV4{
         bytes payload;
         uint256 networkFee;
     }
-    constructor(address _weth) WethProvider(_weth)  {
-    }
+    // constructor(address _weth) WethProvider(_weth)  {
+    // }
     function swap(uint amount0Out, uint amount1Out, address to, bytes memory data) external  payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         require(swapParam.index == 1, "Invalid Route");

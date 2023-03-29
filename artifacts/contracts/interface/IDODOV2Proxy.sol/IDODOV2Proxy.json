@@ -1,0 +1,158 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IDODOV2Proxy",
+  "sourceName": "contracts/interface/IDODOV2Proxy.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "toToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minReturnAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address[]",
+          "name": "dodoPairs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "directions",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isIncentive",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "deadLine",
+          "type": "uint256"
+        }
+      ],
+      "name": "dodoSwapV2ETHToToken",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "returnAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "fromToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fromTokenAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minReturnAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address[]",
+          "name": "dodoPairs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "directions",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isIncentive",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "deadLine",
+          "type": "uint256"
+        }
+      ],
+      "name": "dodoSwapV2TokenToETH",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "returnAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "fromToken",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "toToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fromTokenAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minReturnAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address[]",
+          "name": "dodoPairs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "directions",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isIncentive",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "deadLine",
+          "type": "uint256"
+        }
+      ],
+      "name": "dodoSwapV2TokenToToken",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "returnAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
