@@ -4,7 +4,7 @@ import "./DoDoV2.sol";
 // import "@openzeppelin/contracts/access/Ownable.sol";
 
 
-abstract contract Coin98DoDoV2 is DoDoV2{
+contract Coin98DoDoV2 is DoDoV2{
     using SafeMath for uint256;
 
     struct SwapParam {
@@ -19,14 +19,14 @@ abstract contract Coin98DoDoV2 is DoDoV2{
 
     // constructor(address _dodoErc20ApproveProxy,uint256 _dodoV2SwapLimitOverhead) DoDoV2(_dodoErc20ApproveProxy,_dodoV2SwapLimitOverhead) {}
 
-    function swap(uint amount0Out, uint amount1Out, bytes memory data) external  payable {
+    function swap(uint amountIn, uint amountOut, bytes memory data) external  payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         //require(swapParam.index == 9, "Invalid Route");
         // uint256 preBalance = swapParam.toToken.balanceOf(address(this));
         swapOnDodoV2(
                 swapParam.fromToken,
                 swapParam.toToken,
-                amount0Out,
+                amountIn,
                 swapParam.targetExchange,
                 swapParam.payload
         );

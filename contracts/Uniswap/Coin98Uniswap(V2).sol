@@ -61,16 +61,16 @@ contract Coin98UniswapV2 {
     }
 
 
-    function swap(uint256 amount0Out, uint256 amount1Out, bytes memory data) external{
+    function swap(uint256 amountIn, uint256 amountOut, bytes memory data) external{
 
         SwapParamUniV2 memory swapParam = abi.decode(data, (SwapParamUniV2));
         //require(swapParam.index == 10, "Invalid Route");
-        TransferHelper.transferERC20(address(swapParam.fromToken),amount0Out,swapParam.targetExchange);
+        TransferHelper.transferERC20(address(swapParam.fromToken),amountIn,swapParam.targetExchange);
         // TransferHelper.transferERC20(address(swapParam.fromToken), IERC20(swapParam.fromToken).balanceOf(address(this)),swapParam.targetExchange);
         if (pairSwap(swapParam.targetExchange).token0() != address(swapParam.fromToken)) {
-            poolSwap(amount1Out, swapParam.targetExchange,false, address(this));
+            poolSwap(amountOut, swapParam.targetExchange,false, address(this));
         } else {
-            poolSwap(amount1Out, swapParam.targetExchange,true, address(this));
+            poolSwap(amountOut, swapParam.targetExchange,true, address(this));
         }
     }
 

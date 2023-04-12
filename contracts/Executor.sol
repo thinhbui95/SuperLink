@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 
 interface SwapAdaptor {
-    function swap(uint256 amount0Out, uint256 amount1Out, bytes memory data) external ;
+    function swap(uint256 amountIn, uint256 amountOut, bytes memory data) external ;
 }
 contract Executor is Ownable, ReentrancyGuard{
     // mapping(uint256 => bytes4)  public Adapter;
@@ -29,8 +29,8 @@ contract Executor is Ownable, ReentrancyGuard{
     //         require(success,"Failed");
 
     // }
-    function getCall(uint256 amount0Out, uint256 amount1Out, bytes memory data) internal pure returns(bytes memory){
-        return abi.encodeWithSelector(SwapAdaptor.swap.selector,amount0Out,amount1Out, data);
+    function getCall(uint256 amountIn, uint256 amountOut, bytes memory data) internal pure returns(bytes memory){
+        return abi.encodeWithSelector(SwapAdaptor.swap.selector,amountIn,amountOut, data);
     }
 
     // function delegateCallContract(address _contract) public onlyOwner {
