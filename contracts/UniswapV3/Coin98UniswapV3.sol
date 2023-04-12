@@ -17,13 +17,13 @@ contract Coin98UniswapV3 is UniswapV3{
     }
     // constructor(address _weth) WethProvider(_weth) {}
 
-    function swap(uint amount0Out, uint amount1Out, bytes memory data) external payable {
+    function swap(uint amountIn, uint amountOut, bytes memory data) external payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         //require(swapParam.index == 5, "Invalid Route");
         swapOnUniswapV3(
             swapParam.fromToken,
             swapParam.toToken,
-            amount0Out,
+            amountIn,
             swapParam.targetExchange,
             swapParam.payload
         );

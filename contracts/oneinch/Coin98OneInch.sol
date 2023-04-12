@@ -16,13 +16,13 @@ contract Coin98ZeroxV2 is OneInchPool{
         uint256 networkFee;
     }
 
-    function swap(uint amount0Out, uint amount1Out, address to, bytes memory data) external payable {
+    function swap(uint amountIn, uint amountOut, address to, bytes memory data) external payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         require(swapParam.index == 7, "Invalid Route");
         swapOnOneInch(
             swapParam.fromToken,
             swapParam.toToken,
-            amount0Out,
+            amountIn,
             swapParam.targetExchange
         );
         uint256 balance = swapParam.toToken.balanceOf(address(this));

@@ -15,13 +15,13 @@ contract Coin98BalancerV2 is BalancerV2 {
     }
 
 
-    function swap(uint amount0Out, uint amount1Out, bytes memory data) external payable {
+    function swap(uint amountIn, uint amountOut, bytes memory data) external payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         //require(swapParam.index == 4, "Invalid Route");
         swapOnBalancer(
             swapParam.fromToken,
             swapParam.toToken,
-            amount0Out,
+            amountIn,
             swapParam.targetExchange,
             swapParam.payload
         );

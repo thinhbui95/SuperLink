@@ -16,13 +16,13 @@ contract Coin98BalancerV1 is BalancerV1 {
 
     constructor(address _weth) WethProvider(_weth) {}
 
-    function swap(uint amount0Out, uint amount1Out, address payable to, bytes memory data) external payable {
+    function swap(uint amountIn, uint amountOut, address payable to, bytes memory data) external payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         //require(swapParam.index == 4, "Invalid Route");
         swapOnBalancer(
             swapParam.fromToken,
             swapParam.toToken,
-            amount0Out,
+            amountIn,
             swapParam.targetExchange,
             swapParam.payload
         );

@@ -36,18 +36,6 @@ module.exports = {
     },
     networks: {
         hardhat: {},
-        // ropsten: {
-        //     accounts: {
-        //         mnemonic: process.env.TESTNET_MNEMONIC,
-        //     },
-        //     chainId: 3,
-        //     url: "https://eth-ropsten.alchemyapi.io/v2/5DO6C_sQpiiY1Y40YBJR9E8gS-SpriCJ",
-        // },
-        //         "okt_testnet": {
-        //     accounts:  [process.env.TESTNET_PRIVATE_KEY],
-        //     chainId: 65,
-        //     url: "https://exchaintestrpc.okex.org",
-        // },
 
         // "AVAX_testnet": {
         //     accounts:  [process.env.TESTNET_PRIVATE_KEY],
@@ -88,5 +76,7 @@ module.exports = {
     etherscan: {
         // Your API key for Etherscan
         // Obtain one at https://etherscan.io/
+        apiKey: process.env.ETHERSCAN_API_KEY,
+        // OKLinkPIKEY: "QMVD1SGWXCKTS63I9E69GKUVV41K41F2DU",
     },
 };
