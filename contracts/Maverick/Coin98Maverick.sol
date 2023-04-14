@@ -17,7 +17,6 @@ contract Coin98Maverick is Maverick{
     }
 
 
-
     function swap(uint amountIn, uint amountOut, bytes memory data) external  payable {
         SwapParam memory swapParam = abi.decode(data, (SwapParam));
         swapOnMaverick(
