@@ -32,4 +32,7 @@ interface ISwapRouterUniV3 {
   function exactOutputSingle(ExactOutputSingleParams memory params)
   external payable returns (uint256 amountIn);
 
+  //function swap(address recipient, bool zeroForOne, int256 amountSpecified, uint160 sqrtPriceLimitX96, bytes calldata data) external ;
+
+
 }

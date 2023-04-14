@@ -5,7 +5,7 @@ async function main() {
     const Coin98UniswapV3 = await hre.ethers.getContractFactory("Coin98UniswapV3");
     //const TokenOKC = await upgrades.deployProxy(tokenOKC);
     var weth = "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6" //Goreli
-    const coin98UniswapV3 =await Coin98UniswapV3.deploy(weth);
+    const coin98UniswapV3 =await Coin98UniswapV3.deploy();
 
     await coin98UniswapV3.deployed();
 

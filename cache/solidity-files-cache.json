@@ -2478,8 +2478,8 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/Helper.sol": {
-      "lastModificationDate": 1679887440634,
-      "contentHash": "7d7ec1bc05d7f54a8e6c57b37af7731d",
+      "lastModificationDate": 1681198441225,
+      "contentHash": "156d9ebedf6ef2d806289f927c52b0c8",
       "sourceName": "contracts/Helper.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -2510,6 +2510,7 @@
         "^0.8.0"
       ],
       "artifacts": [
+        "SafeCast",
         "TransferHelper"
       ]
     },
@@ -2813,8 +2814,8 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/UniswapV3/UniswapV3.sol": {
-      "lastModificationDate": 1679666489453,
-      "contentHash": "908a98ca5b6a599d1b907ce9c05cbd2c",
+      "lastModificationDate": 1681273773690,
+      "contentHash": "8affd87c2f9fb1dd2c61b10d5a1967bd",
       "sourceName": "contracts/UniswapV3/UniswapV3.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -2842,7 +2843,6 @@
       },
       "imports": [
         "../library/Utils.sol",
-        "../interface/IWETH.sol",
         "../interface/ISwapRouterUniV3.sol"
       ],
       "versionPragmas": [
@@ -2853,8 +2853,8 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/interface/ISwapRouterUniV3.sol": {
-      "lastModificationDate": 1679496404272,
-      "contentHash": "9a7795ad53a5919907e882cc0f084a82",
+      "lastModificationDate": 1681273786354,
+      "contentHash": "de4d612d340bd355a78dac1081aaee9c",
       "sourceName": "contracts/interface/ISwapRouterUniV3.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -3240,8 +3240,8 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/DemoAdapter(Full).sol": {
-      "lastModificationDate": 1679666440684,
-      "contentHash": "38f63424d55e5a2875b54d0616ec4b6c",
+      "lastModificationDate": 1681444947047,
+      "contentHash": "bfffeca5965646972f19ebcf3c71f680",
       "sourceName": "contracts/DemoAdapter(Full).sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -3287,8 +3287,8 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/CurveV2/Coin98CurveV2.sol": {
-      "lastModificationDate": 1679754719442,
-      "contentHash": "22ad8c411675105d542dc6cf8faa2781",
+      "lastModificationDate": 1681440429196,
+      "contentHash": "4685137097890d73ea61040514ec40ef",
       "sourceName": "contracts/CurveV2/Coin98CurveV2.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -3666,8 +3666,8 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/UniswapV3/Coin98UniswapV3.sol": {
-      "lastModificationDate": 1679758013704,
-      "contentHash": "6fdc08d0f0725a06de9bf686823a0e6c",
+      "lastModificationDate": 1681381168091,
+      "contentHash": "5f14c6967a466e7a409b2fb1861cb405",
       "sourceName": "contracts/UniswapV3/Coin98UniswapV3.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -4044,7 +4044,7 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/BalancerV2/BalancerV2.sol": {
-      "lastModificationDate": 1679970728072,
+      "lastModificationDate": 1679985816556,
       "contentHash": "2f105af4c5575b1d88b0c83f9906767b",
       "sourceName": "contracts/BalancerV2/BalancerV2.sol",
       "solcConfig": {
@@ -4157,8 +4157,8 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/BalancerV2/Coin98BalancerV2.sol": {
-      "lastModificationDate": 1679979285428,
-      "contentHash": "a1e33f89a5f8fda6e63f568924b46f07",
+      "lastModificationDate": 1681440397394,
+      "contentHash": "d68f92b21bc7204e49a6d7d05500befc",
       "sourceName": "contracts/BalancerV2/Coin98BalancerV2.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -4491,8 +4491,8 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/DoDoV2/DoDoV2.sol": {
-      "lastModificationDate": 1679725544633,
-      "contentHash": "eb1f7343b98eed0194a8cea6d9039083",
+      "lastModificationDate": 1681356723895,
+      "contentHash": "d37a0921cc5bef66a6aa6069167b4012",
       "sourceName": "contracts/DoDoV2/DoDoV2.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -4530,8 +4530,8 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/interface/IDODOV2Proxy.sol": {
-      "lastModificationDate": 1679725450173,
-      "contentHash": "e0ef711ee88191529344e771e36a5768",
+      "lastModificationDate": 1681356562571,
+      "contentHash": "b84e697d669421b169ebaf9fe234e9c9",
       "sourceName": "contracts/interface/IDODOV2Proxy.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -4566,8 +4566,8 @@
       ]
     },
     "/Users/buithinh/Desktop/Project/SuperLink/contracts/DoDoV2/Coin98DoDoV2.sol": {
-      "lastModificationDate": 1679729534443,
-      "contentHash": "aec2ae1e2c0c3985ae57a068cc77c719",
+      "lastModificationDate": 1681357509909,
+      "contentHash": "1e459af4101b11b540e05e9a63e76678",
       "sourceName": "contracts/DoDoV2/Coin98DoDoV2.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -4719,6 +4719,239 @@
       ],
       "artifacts": [
         "TokenA"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/KyberSwap/Coin98KyberClassicStatic.sol": {
+      "lastModificationDate": 1681282832042,
+      "contentHash": "0445ea184d0f38be277508847be9ba80",
+      "sourceName": "contracts/KyberSwap/Coin98KyberClassicStatic.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./KyberClassicStatic.sol",
+        "../Helper.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Coin98KyberClassicStatic",
+        "pairSwap"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/KyberSwap/KyberClassicStatic.sol": {
+      "lastModificationDate": 1681282826625,
+      "contentHash": "73ce84f8ac1c0d7be4c8246974187be1",
+      "sourceName": "contracts/KyberSwap/KyberClassicStatic.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "../library/Utils.sol",
+        "../interface/IKyberSwapV1Static.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "KyberSwapClassicStatic"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/interface/IKyberSwapV1Static.sol": {
+      "lastModificationDate": 1681282820223,
+      "contentHash": "21132ca537605631ab63963de5d01554",
+      "sourceName": "contracts/interface/IKyberSwapV1Static.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IKyberSwapV1Static"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/Maverick/Maverick.sol": {
+      "lastModificationDate": 1681294524054,
+      "contentHash": "5a50caa85464525b709f98ae535e5041",
+      "sourceName": "contracts/Maverick/Maverick.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "../interface/ISwapRouterMaverick.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Maverick"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/interface/ISwapRouterMaverick.sol": {
+      "lastModificationDate": 1681293487123,
+      "contentHash": "d4506dd842f1bb884e24956d744e988f",
+      "sourceName": "contracts/interface/ISwapRouterMaverick.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../library/Utils.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ISwapRouterMaverick"
+      ]
+    },
+    "/Users/buithinh/Desktop/Project/SuperLink/contracts/Maverick/Coin98Maverick.sol": {
+      "lastModificationDate": 1681441321367,
+      "contentHash": "d2b6238f91ea3b70a9278d8ff826d48a",
+      "sourceName": "contracts/Maverick/Coin98Maverick.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 5
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Maverick.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Coin98Maverick"
       ]
     }
   }

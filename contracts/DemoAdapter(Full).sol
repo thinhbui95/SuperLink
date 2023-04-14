@@ -210,7 +210,7 @@ contract DemoAdapter1 is Ownable,  EthReceiver,ReentrancyGuard{
 
     function swapRoutes(
         //address partner,
-        uint256[] memory fromToAmount,
+        uint256[] memory fromToAmount,// Include fromAmount and minimumAmountOut
         address fromToken,
         address toToken,
         bytes memory data,
