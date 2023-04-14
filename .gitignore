@@ -1,9 +1,9 @@
 /node_modules
 /.env
 /scripts
-/contracts/0xV2
-/contracts/0xV4
-/contracts/AaveeV2
+/0xV2
+/0xV4
+/AaveeV2
 /contracts/BalancerV1
 /contracts/Curve
 /contracts/Mooniswap
