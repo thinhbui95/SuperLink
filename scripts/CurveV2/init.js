@@ -7,7 +7,7 @@ const Web3EthAbi = require('web3-eth-abi');
 async function main() {
 
     const swapstable = await hre.ethers.getContractFactory("Coin98CurveV2");
-    const Swapstable = await swapstable.attach("0x2DD4Aa80b9197FdfFF4F15b6a1a35633437cd398");//BSC testnet
+    const Swapstable = await swapstable.attach("0x0cdF197755865923Bd669d0CB09651A07a5fe172");//BSC testnet
     var amount = Web3.utils.toWei('50', 'ether'); 
     const payload1 = Web3EthAbi.encodeParameter({
         CurveV2Data:{

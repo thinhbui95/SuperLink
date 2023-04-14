@@ -53,7 +53,7 @@ module.exports = {
         //     url: "https://goerli.optimism.io/",
         // },
         // bsc_testnet: {
-        //     // accounts: 
+        //     // accounts:
         //     //     mnemonic: process.env.TESTNET_MNEMONIC,
         //     // },
         //     accounts: [process.env.TESTNET_PRIVATE_KEY],

@@ -12,7 +12,7 @@ abstract contract DoDoV2  {
     struct SwapDoDoV2 {
         address[] dodoPairs;
         uint256 directions;
-        address  dodoErc20ApproveProxy;
+        address  dodoErc20Approve;
         uint256  dodoV2SwapLimitOverhead;
 
     }
@@ -33,7 +33,7 @@ abstract contract DoDoV2  {
 
     {
         SwapDoDoV2 memory dodoV2 = abi.decode(payload, (SwapDoDoV2));
-        Utils.approve(dodoV2.dodoErc20ApproveProxy, address(fromToken), fromAmount);
+        Utils.approve(dodoV2.dodoErc20Approve, address(fromToken), fromAmount);
         IDODOV2Proxy(exchange).dodoSwapV2TokenToToken(
                 address(fromToken),
                 address(toToken),
