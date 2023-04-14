@@ -5,7 +5,7 @@ const Web3EthAbi = require('web3-eth-abi');
 async function main() {
     const KyberSwapStatic = await hre.ethers.getContractFactory("Coin98KyberClassicStatic");
 
-    const kyberSwapStatic = await KyberSwapStatic.attach("0xEfE7B43187e8FF1661BC3C2151F16610E63AC0c5");
+    const kyberSwapStatic = await KyberSwapStatic.attach("0x0f69C8a15cf20B52A4a676A00db187Cd0E950786");
     console.log("Hello");
     const kyberSwapClassicStaticData = Web3EthAbi.encodeParameter({
         KyberSwapClassicStaticData :{
@@ -33,12 +33,13 @@ async function main() {
 
     console.log("swapParam", swapParam);
 
-    let amountIn = Web3.utils.toWei('9', 'ether');
+    let amountIn = Web3.utils.toWei('0.09', 'ether');
     console.log("amountIn", amountIn);
-    let amountOut = Web3.utils.toWei('0.001', 'ether');
+    let amountOut = Web3.utils.toWei('0.00001', 'ether');
     console.log("amountOut", amountOut);
     try {
-        await kyberSwapStatic.swap(amountIn, amountOut, swapParam);
+        const tx = await kyberSwapStatic.swap(amountIn, amountOut, swapParam);
+        console.log("Transaction hash", tx.hash);
     } catch(error) {
         console.log(error);
     }

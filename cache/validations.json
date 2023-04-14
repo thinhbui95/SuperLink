@@ -137,6 +137,253 @@
       "contracts/KyberClassic/Coin98KyberClassicStatic.sol:Coin98KyberClassicStatic": {
         "src": "contracts/KyberClassic/Coin98KyberClassicStatic.sol:10",
         "version": {
+          "withMetadata": "01ff88f6e56f134fe192c2b43dd35edccae437a40674979c47eb1a61a308f467",
+          "withoutMetadata": "12a0036712cd3d3475e6a97b8dd6ae96e95ae9efcc5e341610021a53b23cc751",
+          "linkedWithoutMetadata": "12a0036712cd3d3475e6a97b8dd6ae96e95ae9efcc5e341610021a53b23cc751"
+        },
+        "inherit": [
+          "contracts/KyberClassic/KyberClassicStatic.sol:KyberSwapClassicStatic"
+        ],
+        "libraries": [
+          "contracts/Helper.sol:TransferHelper"
+        ],
+        "methods": [
+          "swap(uint256,uint256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.4"
+      },
+      "contracts/KyberClassic/Coin98KyberClassicStatic.sol:pairSwap": {
+        "src": "contracts/KyberClassic/Coin98KyberClassicStatic.sol:6",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "token0()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.4"
+      },
+      "contracts/KyberClassic/KyberClassicStatic.sol:KyberSwapClassicStatic": {
+        "src": "contracts/KyberClassic/KyberClassicStatic.sol:8",
+        "version": {
+          "withMetadata": "0a8691399cf12647704eb31757f15457c097fd28622d39ce2b8864758ac954a2",
+          "withoutMetadata": "ac0db523ddc3e330f735df7b3b0b24460531c71290a891170e840f8f67d5ff6b",
+          "linkedWithoutMetadata": "ac0db523ddc3e330f735df7b3b0b24460531c71290a891170e840f8f67d5ff6b"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.4"
+      },
+      "contracts/interface/IKyberSwapV1Static.sol:IKyberSwapV1Static": {
+        "src": "contracts/interface/IKyberSwapV1Static.sol:6",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "swap(uint256,uint256,address,bytes)",
+          "swapExactTokensForTokensSupportingFeeOnTransferTokens(uint256,uint256,address[],contract IERC20[],address,uint256)",
+          "swapExactETHForTokensSupportingFeeOnTransferTokens(uint256,address[],contract IERC20[],address,uint256)",
+          "swapExactTokensForETHSupportingFeeOnTransferTokens(uint256,uint256,address[],contract IERC20[],address,uint256)",
+          "swapExactTokensForTokens(uint256,uint256,address[],contract IERC20[],address,uint256)",
+          "swapTokensForExactTokens(uint256,uint256,address[],contract IERC20[],address,uint256)",
+          "swapExactETHForTokens(uint256,address[],contract IERC20[],address,uint256)",
+          "swapTokensForExactETH(uint256,uint256,address[],contract IERC20[],address,uint256)",
+          "swapExactTokensForETH(uint256,uint256,address[],contract IERC20[],address,uint256)",
+          "swapETHForExactTokens(uint256,address[],contract IERC20[],address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.4"
+      },
+      "contracts/library/Utils.sol:Utils": {
+        "src": "contracts/library/Utils.sol:17",
+        "version": {
+          "withMetadata": "1cca05a314d7a750e179692a053f1b2e220b8d3e8bbf70eca6c91b734d29b07e",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/math/SafeMath.sol:SafeMath",
+          "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20",
+          "contracts/Helper.sol:TransferHelper"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.4"
+      }
+    },
+    {
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.4"
+      },
+      "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol:IERC20Permit": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol:14",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+          "nonces(address)",
+          "DOMAIN_SEPARATOR()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.4"
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:19",
+        "version": {
+          "withMetadata": "11953e8f3a67eb73209b7fcb0d1b95ed7e9c588586563fb0ff6dd8cc221ceefd",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/Address.sol:Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.4"
+      },
+      "@openzeppelin/contracts/utils/Address.sol:Address": {
+        "src": "@openzeppelin/contracts/utils/Address.sol:9",
+        "version": {
+          "withMetadata": "f0fa64385ca28038911a9b8db894da62e990bd777bcce13a98382f11d748f48d",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.4"
+      },
+      "@openzeppelin/contracts/utils/math/SafeMath.sol:SafeMath": {
+        "src": "@openzeppelin/contracts/utils/math/SafeMath.sol:16",
+        "version": {
+          "withMetadata": "76f44b5d896e4b9252ad829cbe7b0d05e2ff8ff358fb7ecc3191f7b5a7750d5e",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.4"
+      },
+      "contracts/Helper.sol:TransferHelper": {
+        "src": "contracts/Helper.sol:4",
+        "version": {
+          "withMetadata": "b9c3c8609cdad193923f6f3bb05634524bc29b75f53f9ece9638cc4c50a1dbd1",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.4"
+      },
+      "contracts/KyberClassic/Coin98KyberClassicStatic.sol:Coin98KyberClassicStatic": {
+        "src": "contracts/KyberClassic/Coin98KyberClassicStatic.sol:10",
+        "version": {
           "withMetadata": "78fcce29260a87b9e9ff9231c08196789cadfdc8b4aed7718e3ede0ff0f35c1f",
           "withoutMetadata": "9ce0ee465dec9c780270e7a37a1a19d245c6af2d33bfcdd9efe4757078a67e91",
           "linkedWithoutMetadata": "9ce0ee465dec9c780270e7a37a1a19d245c6af2d33bfcdd9efe4757078a67e91"

@@ -2587,8 +2587,8 @@
       ]
     },
     "/Users/tristan/coin98/projects/SuperLink/contracts/KyberClassic/Coin98KyberClassicStatic.sol": {
-      "lastModificationDate": 1681273185182,
-      "contentHash": "0445ea184d0f38be277508847be9ba80",
+      "lastModificationDate": 1681297596742,
+      "contentHash": "7f44e4d88dd71757ab57c48c0f6275ce",
       "sourceName": "contracts/KyberClassic/Coin98KyberClassicStatic.sol",
       "solcConfig": {
         "version": "0.8.4",
