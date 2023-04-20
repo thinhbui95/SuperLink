@@ -4,15 +4,15 @@ import "./Helper.sol";
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-// import "./CurveV2/Coin98CurveV2.sol";
-// import "./Uniswap/Coin98Uniswap(V2).sol";
+import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
+
 
 
 interface SwapAdaptor {
     function swap(uint256 amountIn, uint256 amountOut, bytes memory data) external ;
 }
 contract Executor is Ownable, ReentrancyGuard{
-    // mapping(uint256 => bytes4)  public Adapter;
+    using EnumerableSet for EnumerableSet.AddressSet;
 
     struct ElementSwap {
         address[] adapters;
@@ -20,23 +20,25 @@ contract Executor is Ownable, ReentrancyGuard{
         uint256[] amountOuts;
         //address fromToken;
         bytes[] payloads;
-
     }
-    // address private contractDelegate;
-    // function addAdapters(address _contract) public onlyOwner {
-    //     contractDelegate = _contract;
-    //     (bool success, ) = contractDelegate.delegatecall(abi.encodeWithSignature("addAdapter()"));
-    //         require(success,"Failed");
+    EnumerableSet.AddressSet private whiteListAdapters;
 
-    // }
     function getCall(uint256 amountIn, uint256 amountOut, bytes memory data) internal pure returns(bytes memory){
         return abi.encodeWithSelector(SwapAdaptor.swap.selector,amountIn,amountOut, data);
     }
+    function addWhiteListAdapter(address[] memory _adapter) public onlyOwner {
+        for (uint i = 0; i < _adapter.length; i++) {
+            whiteListAdapters.add(_adapter[i]);
+        }
+    }
 
-    // function delegateCallContract(address _contract) public onlyOwner {
-    //     contractDelegate = _contract;
 
-    // }
+    function removeWhiteListAdapter(address[] memory _adapter) public onlyOwner {
+        for (uint i = 0; i < _adapter.length; i++) {
+            whiteListAdapters.remove(_adapter[i]);
+        }
+    }
+
 
     function chainRouter(bytes[] memory data) internal  {
         uint256 sizeChain = data.length;
@@ -54,6 +56,7 @@ contract Executor is Ownable, ReentrancyGuard{
                 for (uint256 k ; k<sizeElementSwap; k++){
                     //TransferHelper.transferERC20(fromToken,amountIn[k],routers[k]);
                     bytes memory getcall = getCall(amountIns[k], amountOuts[k],payloads[k]);
+                    require(whiteListAdapters.contains(adapters[k]),"Adapter in valid");
                     (bool success, ) = adapters[k].delegatecall(getcall);
                     require(success,"Failed Call");
                 }
